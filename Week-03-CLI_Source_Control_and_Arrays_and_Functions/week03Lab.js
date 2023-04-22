@@ -46,9 +46,6 @@ const strCopy = str.split();
 console.log(strCopy);
 
 
-
-
-
 // Question 2: alphabetArray
 console.log(`--------------------------
 Question 2: alphabetArray \n`);
@@ -206,6 +203,16 @@ Question 6: addingMachine \n`);
  * ↓ YOUR CODE HERE ↓ */
 
 
+function addingMachine(x) {
+
+       let sum = 0;
+      
+       for (let i = 0; i < x.length; i++) {
+                    sum += x[i];
+      }      
+             return sum;
+      
+      }
 
 
 
@@ -238,8 +245,21 @@ Question 7: reverse \n`);
  * 
  * ↓ YOUR CODE HERE ↓ */
 
+function reverse(x) {
 
+       if (typeof x === 'boolean') {
+              return !x;
+       }else if (typeof x === 'number'){
+              return x.toString().split('').reverse().join('');
+       }else if (typeof x === 'string'){
+              return x.split('').reverse().join('');
+       }else if (Array.isArray(x)) {
+              return x.reverse();
+       }else {
+              return false;
+       }
 
+}
 
 
 /* ↑ YOUR CODE HERE ↑ */
@@ -271,7 +291,12 @@ Question 8: removeElements \n`);
  * 
  * ↓ YOUR CODE HERE ↓ */
 
-
+function removeElements(array){
+       while(array.length > 0){
+       array.pop();
+       }
+       return array;
+} 
 
 
 
@@ -297,10 +322,15 @@ Question 9: whichArrayIsLonger  \n`);
  * 
  * 
  * ↓ YOUR CODE HERE ↓ */
-
-
-
-
+function whichArrayIsLonger(array1, array2){
+       if (array1.length > array2.length) {
+              return array1;
+       }  else if (array1.length < array2.length){
+              return array2;
+       }  else {
+              return false;
+       }
+}
 
 /* ↑ YOUR CODE HERE ↑ */
 
