@@ -212,7 +212,7 @@ function addingMachine(x) {
       }      
              return sum;
       
-      }
+}
 
 
 
