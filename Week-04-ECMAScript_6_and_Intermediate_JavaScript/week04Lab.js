@@ -49,6 +49,8 @@ Question 1: Declaring Let and Const variables`)
  let friend1 = 'Meila';
  let friend2 = 'Ty';
 
+ console.log(eat, drink, friend1, friend2);
+
 //Question: Name a reason why you would use const instead of let.
 //Answer: Const is used for items that will not change or that we don't want to be changed on accident.
 
@@ -77,7 +79,7 @@ Question 2a: Oh no`)
  * Step 2: Make a change to your code in Question 1 to fix the error. Run your code to make sure it's fixed.
  *
  * ↓ YOUR CODE HERE ↓ */
- /*  const drink = 'lemonade'*/
+ /*  drink = 'lemonade'*/
  console.log(drink2);
 
 //Question: Read the error message - in your own words - what does it mean?
@@ -99,7 +101,7 @@ Question 3: Arrow Functions`)
  * Step 3: Copy the code below, ↓ paste it underneath our new function, and run the code.
  *         console.log(lunchTime('Pizza','Water'))
  * ↓ YOUR CODE HERE ↓ */
-   const lunchTime = (eat, drink2) => { return `${friend1} and ${friend2} are having ${eat} and ${drink2} for lunch.`};
+   const lunchTime = (foodChoice, drinkChoice) => { return `${friend1} and ${friend2} are having ${foodChoice} and ${drinkChoice} for lunch.`};
    console.log(lunchTime('Pizza','Water'));
    
 //Question: What would your function look like if we were using the old way of creating a function?
@@ -121,7 +123,7 @@ Question 4: Callbacks`)
  *
  * ↓ YOUR CODE HERE ↓ */
 
- const foodForTodayAndTomorrow = (tomorrowsFoodChoice, tomorrowsDrinkChoice) => {return `${lunchTime(eat, drink2)} Tomorrow we want ${tomorrowsFoodChoice} and ${tomorrowsDrinkChoice}.`}
- console.log(foodForTodayAndTomorrow('burgers', 'beer'));
+ const foodForTodayAndTomorrow = (tomorrowsFoodChoice, tomorrowsDrinkChoice, callbackFunction) => {return `${callbackFunction} Tomorrow we want ${tomorrowsFoodChoice} and ${tomorrowsDrinkChoice}.`}
+ console.log(foodForTodayAndTomorrow('burgers', 'beer', lunchTime('pizza', 'lemonade')));
 
 console.log(`-----------Finished------------`)
