@@ -24,11 +24,18 @@ function averageAge(ages) {
     return sum;
 }
 console.log('Step 3: The average age is ' + (averageAge([3, 9, 23, 64, 2, 8, 28, 93, 35]) / 9));  /* Average age: 3 + 9 + 23 + 64 + 2 + 8 + 28 + 93 + 35 = 265; 265 / 9 = 29.444444444444444  */
+console.log('Step 3: The average age is ' + (averageAge([i]) / (ages[ages.length - 1])));  /* Average age: 3 + 9 + 23 + 64 + 2 + 8 + 28 + 93 + 35 = 265; 265 / 9 = 29.444444444444444  */
 
-
-/* Array of names: "Sam", "Tommy", "Tim", "Sally", "Buck", "Bob"  */
+/* Array of names: "Sam", "Tommy", "Tim", "Sally", "Buck", "Bob". Get average letters per name. */
 
 let names = ["Sam", "Tommy", "Tim", "Sally", "Buck", "Bob"];
-console.log(names);
+
+function averageLettersPerName(names) {
+
+    for (let i = 0; i < names.length; i++){
+        sum += names[i];
+    }
+
+}
 
 
