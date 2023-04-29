@@ -60,8 +60,8 @@ console.log('Question 5:');
 /*---------------------------------------------*/
 
 let names = ["Sam", "Tommy", "Tim", "Sally", "Buck", "Bob"];            /* names Array */
-console.log('Step 5: The names in the array are ' + names);             /* displays list of names*/
-console.log(names[names.length - 1]);
+console.log('The names in the array are ' + names);             /* displays list of names*/
+
 
 /* 
 6. Use a loop to iterate through the array and calculate the average number of letters per name. */
@@ -70,21 +70,14 @@ console.log('Question 6:');
 
 /*---------------------------------------------*/
 
-/*
-let avgLettersPerName = [names];
- 
+
+let avgLetters = 0;
+
     for (let i = 0; i < names.length; i++){
-        console.log(avgLettersPerName[i]);
+        avgLetters += names[i].length;
     }
-
-console.log("Step 6: The average letters per name is " + avgLettersPerName(names)); /* printing the average letters per name */
-
-let avgLettersPerName = (names);
-let counter = 0;
-    for (let i = 0; i < avgLettersPerName.length; i++){
-        counter++;
-    }
-    console.log(counter.length);
+    let avgLettersPerName = avgLetters / names.length;
+    console.log(avgLettersPerName);  /* Returns total of 23 letters / 6 elements = 3.833333333*/
 
 /* 
 7. Use a loop to iterate through the array again and concatenate all the names together, separated by spaces. */
@@ -94,7 +87,11 @@ console.log('Question 7:');
 /*---------------------------------------------*/
 
 
-
+    for (let i = 0; i < names.length; i++) {
+        console.log(names.join(' '));
+    } 
+    
+    
 /* 
 8. How do you access the last element of any array? */
 
@@ -127,6 +124,13 @@ console.log('Question 10:');
 
 /*---------------------------------------------*/
 
+let nameLengths = [names];
+let letterCount = 0;
+
+    for (let i = 0; i < nameLengths.length; i++) {
+        letterCount++;
+    }
+    console.log(nameLengths);
 
 /* 
 11. Write a loop to iterate over the nameLengths array and calculate the sum of all the elements in the array.*/
@@ -134,6 +138,15 @@ console.log('Question 10:');
 console.log('Question 11:');
 
 /*---------------------------------------------*/
+
+
+let nameLetters = 0;
+
+    for (let i = 0; i < names.length; i++){
+        nameLetters += names[i].length;
+    }
+    console.log(nameLetters);  /* Returns total of 23 letters*/
+
 
 /* 
 12. Write a function that takes two parameters, word and n, as arguments and returns the word concatenated to itself n number of times. (i.e. if I pass in ‘Hello’ and 3, I would expect the function to return ‘HelloHelloHello’). */
@@ -149,6 +162,14 @@ console.log('Question 12:');
 console.log('Question 13:');
 
 /*---------------------------------------------*/
+let firstName = 'Meila ';
+let lastName = 'Bolden';
+
+function fullName(firstName, lastName) {
+    let fullName = firstName.concat(lastName);
+    return fullName;
+}
+console.log(fullName(firstName, lastName));
 
 
 /* 
