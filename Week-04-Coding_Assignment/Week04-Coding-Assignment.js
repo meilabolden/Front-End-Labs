@@ -124,11 +124,10 @@ console.log('Question 10:');
 
 /*---------------------------------------------*/
 
-let nameLengths = [names];
-let letterCount = 0;
+let nameLengths = [];
 
-    for (let i = 0; i < nameLengths.length; i++) {
-        letterCount++;
+    for (let i = 0; i < names.length; i++) {
+        nameLengths.push(names[i].length);
     }
     console.log(nameLengths);
 
@@ -155,6 +154,12 @@ console.log('Question 12:');
 
 /*---------------------------------------------*/
 
+let word = 'huh';
+let n = 4;
+
+function wordRepeat(word, n) {
+    return word.repeat(n);
+} console.log(wordRepeat(word, n));
 
 /* 
 13. Write a function that takes two parameters, firstName and lastName, and returns a full name.  The full name should be the first and the last name separated by a space. */
@@ -162,14 +167,11 @@ console.log('Question 12:');
 console.log('Question 13:');
 
 /*---------------------------------------------*/
-let firstName = 'Meila ';
-let lastName = 'Bolden';
 
 function fullName(firstName, lastName) {
-    let fullName = firstName.concat(lastName);
-    return fullName;
+    return firstName + ' ' + lastName;
 }
-console.log(fullName(firstName, lastName));
+console.log(fullName('Meila', 'Bolden'));
 
 
 /* 
@@ -178,6 +180,22 @@ console.log(fullName(firstName, lastName));
 console.log('Question 14:');
 
 /*---------------------------------------------*/
+
+let numbersArray = [15, 2, 50, 35];
+
+function numbers(numbersArray) {
+
+    let sum = 0;
+
+    for (let i = 0; i < numbers; i++); {
+        sum += numbers;          
+          if ( numbers <= 100) {
+            console.log(false);
+        } else {
+            console.log(true);
+        }
+    }
+} console.log(numbers(numbersArray));
 
 
 /* 
@@ -188,6 +206,7 @@ console.log('Question 15:');
 /*---------------------------------------------*/
 
 
+
 /* 
 16. Write a function that takes two arrays of numbers and returns true if the average of the elements in the first array is greater than the average of the elements in the second array. */
 
@@ -196,12 +215,14 @@ console.log('Question 16:');
 /*---------------------------------------------*/
 
 
+
 /* 
 17. Write a function called willBuyDrink that takes a boolean isHotOutside, and a number moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50. */
 
 console.log('Question 17:');
 
 /*---------------------------------------------*/
+
 
 
 /* 
