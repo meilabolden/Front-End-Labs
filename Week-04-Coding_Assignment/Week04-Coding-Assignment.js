@@ -88,7 +88,7 @@ console.log('Question 7:');
 
 
     for (let i = 0; i < names.length; i++) {
-        console.log(names.join(' '));
+        console.log(names.join(' '));                       /* Returns names listed and separated by spaces: Sam Tommy Tim Sally Buck Bob */
     } 
     
     
@@ -100,7 +100,7 @@ console.log('Question 8:');
 /*---------------------------------------------*/
 
 console.log('You can access the last element in an array by adding .length - 1 to the end of the array. Ex. console.log(names[names.length - 1]). Returns:  ' 
-+ (names[names.length - 1])); /* Returns Bob*/
++ (names[names.length - 1])); /* Expected return is the last element name "Bob". */
 
 /* 
 9. How do you access the first element of any array? */
@@ -109,7 +109,7 @@ console.log('Question 9:');
 
 /*---------------------------------------------*/
 
-console.log('You can access the first element in an array by printing (names[0]). Ex. console.log(names[0]). Returns:  ' + (names[0])); /* Returns Sam */
+console.log('You can access the first element in an array by printing (names[0]). Ex. console.log(names[0]). Returns:  ' + (names[0])); /* Expected return is the first element in the array "Sam" */
 
 /* 
 10. Create a new array called nameLengths. Write a loop to iterate over the previously created names array and add the length of each name to the nameLengths array. 
@@ -129,7 +129,9 @@ let nameLengths = [];
     for (let i = 0; i < names.length; i++) {
         nameLengths.push(names[i].length);
     }
-    console.log(nameLengths);
+    console.log(nameLengths);                    /* Returns the following index positions and the letter count for each name in the array. 
+ /                                                 [3, 5, 3, 5, 4, 3]
+ /                                                 [Sam, Tommy, Tim, Sally, Buck, Bob] */
 
 /* 
 11. Write a loop to iterate over the nameLengths array and calculate the sum of all the elements in the array.*/
@@ -144,7 +146,7 @@ let nameLetters = 0;
     for (let i = 0; i < names.length; i++){
         nameLetters += names[i].length;
     }
-    console.log(nameLetters);  /* Returns total of 23 letters*/
+    console.log(nameLetters);  /* Adds all numbers 3 + 5 + 3 + 5 + 4 + 3 for a total of 23 letters. */
 
 
 /* 
@@ -154,12 +156,12 @@ console.log('Question 12:');
 
 /*---------------------------------------------*/
 
-let word = 'huh';
+let word = 'help';
 let n = 4;
 
 function wordRepeat(word, n) {
     return word.repeat(n);
-} console.log(wordRepeat(word, n));
+} console.log(wordRepeat(word, n));     /* Result will be helphelphelphelp */
 
 /* 
 13. Write a function that takes two parameters, firstName and lastName, and returns a full name.  The full name should be the first and the last name separated by a space. */
@@ -171,7 +173,7 @@ console.log('Question 13:');
 function fullName(firstName, lastName) {
     return firstName + ' ' + lastName;
 }
-console.log(fullName('Meila', 'Bolden'));
+console.log(fullName('Meila', 'Bolden')); /* Result Meila Bolden due to returning the concatonation of each parameter with ' ' in between. */
 
 
 /* 
@@ -187,15 +189,14 @@ function numbers(numbersArray) {
 
     let sum = 0;
 
-    for (let i = 0; i < numbers; i++); {
-        sum += numbers;          
-          if ( numbers <= 100) {
-            console.log(false);
-        } else {
-            console.log(true);
-        }
-    }
-} console.log(numbers(numbersArray));
+
+    for (let i = 0; i < numbersArray.length; i++) {
+        sum += numbersArray[i]; 
+    } 
+    return sum > 100;
+}
+    console.log(numbers(numbersArray));         /* Answer is true because 15 + 2 + 50 + 35 = 102; 102 > 100. */
+  
 
 
 /* 
@@ -205,6 +206,18 @@ console.log('Question 15:');
 
 /*---------------------------------------------*/
 
+let grades = [90, 85, 82, 100, 78];
+
+function avgNumbers(grades) {
+    
+    let sum = 0; 
+
+    for (let i = 0; i < grades.length; i++){
+        sum += grades[i];
+    }
+    return sum;
+}   
+    console.log((avgNumbers(grades)) / grades.length);  /* Adds numbers 90 + 85 + 82 + 100 + 78 = 435; 435 / 5 = 87 average  */
 
 
 /* 
@@ -214,7 +227,26 @@ console.log('Question 16:');
 
 /*---------------------------------------------*/
 
+    let arr1 = [2, 3, 10];                  /* Avg is 15 / 3 = 5 */
+     let arr2 = [0, 2, 4];                   /* Avg is 6 / 3 = 2 */
 
+   function whichAvgIsGreater(arr1, arr2) {
+
+        let sum = 0;
+
+        for (let i = 0; i < arr1.length; i++) {
+            sum += arr1[i];
+        }   let avg1 = sum / arr1.length;
+
+        let sum1 = 0;
+
+        for (let i = 0; i < arr2.length; i++) {
+            sum1 += arr2[i];
+        }   let avg2 = sum1 / arr2.length;
+            return avg1 > avg2;
+    }      
+
+    console.log(whichAvgIsGreater(arr1, arr2));              /* Returns true because arr1 = 15; arr2 = 6; 10 > 6; */
 
 /* 
 17. Write a function called willBuyDrink that takes a boolean isHotOutside, and a number moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50. */
@@ -222,7 +254,15 @@ console.log('Question 16:');
 console.log('Question 17:');
 
 /*---------------------------------------------*/
+let isHotOutside = 'yes';
+let moneyInPocket = 11.50;
 
+function willBuyDrink() {
+    if ((isHotOutside === 'yes') && (moneyInPocket > 10.50)) {
+        return true;
+    }
+}
+    console.log(willBuyDrink(isHotOutside, moneyInPocket));     /* Results in true because isHotOutside is yes and moneyInPocket is > 10.50.  */
 
 
 /* 
@@ -231,6 +271,26 @@ console.log('Question 17:');
 console.log('Question 18:');
 
 /*---------------------------------------------*/
+
+let dineOutBudget = 60.00;
+let totalDineOutCostPerPerson = [6.99, 5.45, 10.99, 12.99, 25.95];
+
+function canWeDineOut() {
+    
+    let sum = 0;
+
+    for (let i = 0; i < totalDineOutCostPerPerson.length; i++); {
+        sum += totalDineOutCostPerPerson[i]; {
+            if (dineOutBudget >= totalDineOutCostPerPerson.length) {
+                return 'We can dine out for dinner!';
+            } else if (dineOutBudget <= totalDineOutCostPerPerson.length){
+                return 'We have food at home.';
+            }
+        }
+    }
+}   
+ console.log(canWeDineOut(dineOutBudget, totalDineOutCostPerPerson));
+
 
 
 
