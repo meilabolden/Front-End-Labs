@@ -273,23 +273,24 @@ console.log('Question 18:');
 /*---------------------------------------------*/
 
 let dineOutBudget = 60.00;
-let totalCostPerPerson = 42.95;
+let totalCostToDineOut = 42.95;
 
-function canWeDineOut(dineOutBudget, totalCostPerPerson) {
+function canWeDineOut(dineOutBudget, totalCostToDineOut) {
     
 
-    for (let i = 0; i < totalCostPerPerson; i++) {
-            if (dineOutBudget > totalCostPerPerson) {
+    for (let i = 0; i < totalCostToDineOut; i++) {
+            if (dineOutBudget > totalCostToDineOut) {
                 return 'We can dine out for dinner!';
-            } else if (dineOutBudget < totalCostPerPerson){
+            } else if (dineOutBudget < totalCostToDineOut){
                 return 'We have food at home.';
         }
     }
 }
    
- console.log(canWeDineOut(dineOutBudget, totalCostPerPerson)); /* The function determines if there is enough money in the dine out budget to eat out tonight or if we have to eat at home. 
+ console.log(canWeDineOut(dineOutBudget, totalCostToDineOut)); /* The function determines if there is enough money in the dine out budget to eat out tonight or if we have to eat at home. 
  /                                                                I created this because this is a common question in my household. Everyone wants to eat out but it gets pricey!
- /                                                                Answer will return "We can dine out for dinner!" because 42.95 < 60.00 */
+ /                                                                Answer will return "We can dine out for dinner!" because 42.95 < 60.00. If totalCostToDineOut is > dineOutBudget, will return
+ /                                                                "We have food at home." */
 
 
 
