@@ -273,23 +273,23 @@ console.log('Question 18:');
 /*---------------------------------------------*/
 
 let dineOutBudget = 60.00;
-let totalDineOutCostPerPerson = [6.99, 5.45, 10.99, 12.99, 25.95];
+let totalCostPerPerson = 42.95;
 
-function canWeDineOut() {
+function canWeDineOut(dineOutBudget, totalCostPerPerson) {
     
-    let sum = 0;
 
-    for (let i = 0; i < totalDineOutCostPerPerson.length; i++); {
-        sum += totalDineOutCostPerPerson[i]; {
-            if (dineOutBudget >= totalDineOutCostPerPerson.length) {
+    for (let i = 0; i < totalCostPerPerson; i++) {
+            if (dineOutBudget > totalCostPerPerson) {
                 return 'We can dine out for dinner!';
-            } else if (dineOutBudget <= totalDineOutCostPerPerson.length){
+            } else if (dineOutBudget < totalCostPerPerson){
                 return 'We have food at home.';
-            }
         }
     }
-}   
- console.log(canWeDineOut(dineOutBudget, totalDineOutCostPerPerson));
+}
+   
+ console.log(canWeDineOut(dineOutBudget, totalCostPerPerson)); /* The function determines if there is enough money in the dine out budget to eat out tonight or if we have to eat at home. 
+ /                                                                I created this because this is a common question in my household. Everyone wants to eat out but it gets pricey!
+ /                                                                Answer will return "We can dine out for dinner!" because 42.95 < 60.00 */
 
 
 
