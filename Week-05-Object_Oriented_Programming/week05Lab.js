@@ -288,7 +288,7 @@ Question 7: Put it all together \n`)
     }
 
     addMovie(movie){
-      this.movies.push = (movie);
+      this.movies.push(movie);
     }
 
     displayMovies(){
