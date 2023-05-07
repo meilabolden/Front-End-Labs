@@ -80,10 +80,9 @@ class OrderMenu {
     
     showOrderSelectionOptions(orderInfo){
         return prompt(`
-            0. Back
+            0. Back to Main Menu
             1. Add Order
             2. Delete Order
-            3. View Entire Order
          -----------------------------
             ${orderInfo}   
         `);
@@ -104,11 +103,10 @@ class OrderMenu {
         if (index > -1 && index < this.order.length) {
             this.selectedOrder = this.order[index];
 
-            let description = 'Order Info: ' + this.order.name + ' ordered a ' + this.selectedOrder.name + '\n';
+            let description = 'Order Name: ' + this.selectedOrder.name + '\n';
 
-            for (let i = 0; i < this.order.length; i++) {
-                description += i + ')' + this.order.name[i].name
-                    + ' - ' + this.order.name[i].order + '\n';
+            for (let i = 0; i < this.selectedOrder.name.length; i++) {
+                description += i + ')' + this.selectedOrder.name[i].name + '\n';
             }
 
             let selection = this.showOrderSelectionOptions(description);
@@ -138,12 +136,15 @@ class OrderMenu {
         Small, Medmium, & Large
         `);
         this.order.push(new Customer(name, order));
+        this.selectedOrder = this.order[this.order.length-1]
+        alert(`Great choice! We're on it!`)
     }
 
     deleteOrder(){
         let index = prompt('Enter the selection of the order that you want remove.');
         if (index > -1 && index < this.order.length){
-            this.order.name.splice(index, 1);
+            this.order.splice(index, 1);
+            alert('Selection has been successfully deleted.')
         }
 
     }
