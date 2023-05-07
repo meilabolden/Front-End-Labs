@@ -18,92 +18,156 @@ Your menu should have the options to create, view, and delete elements.
 
 
 function promptOrder() {
-    let name = window.prompt('Who needs a pick me up?'); 
-    window.prompt(`What can we make for ${name}?`);
-    
-}
-
-
-class Customer {
-    constructor(name, order){
-        this.name = name;
-        this.order = order;
-    }
-}
-
-class Customers {
-    constructor(name, customers){
-        this.name = name;
-        this.customers = customers;
-    }
-
-    addCustomer(customer){
-        if (customer instanceof Customers) {
-            this.customers.push(customer);
-        }
-        return `${this.name} has an order for ${this.customers.length} coffees.`
-    }
-}
-
-class OrderMenu extends Customer{
-    constructor(){
-       this.item = item;
-       this.size = size;
-    super(name, order)
-    }
-
-    describe (){
-        return `${this.name} ordered a ${this.size} ${this.item}.`
-    }
-
-    addItem(item) {
-        if (item instanceof Customer) {
-            this.item.push(item);
-        } else {
-            throw new Error (`This ${this.item} is not on the menu.`)
-        }
-    }
-
-    start() {
-        let selection = this.showMainMenuOptions();
-        while (selection != 0) {
-            switch (selection) {
-                case '1' :
-                    this.showItem();
-                    break;
-                case '2' :
-                    this.addItem();
-                    break;
-                case '3' :
-                    this.deleteItem();
-                    break;
-                case '4' :
-                    this.viewEntireOrder();
-                    break;
-                default:
-                    selection = 0;
-            }
-            selection = this.showMainMenuOptions();
-        }
-        alert('See you on your next Coffee Run!')
-    }
-
-    showMainMenuOptions = function promptOrder() {
-        let name = window.prompt('Who needs a pick me up?'); 
-        window.prompt(`What can we make for ${name}?`);
+    alert('Time for a pick-me-up? Click OK to start your Coffee Run.'); 
+    let menu = new OrderMenu();
+        menu.start(); 
         
+
+    class Customer {
+        constructor(name){
+            this.name = name;
+        }
     }
-    showMainMenuOptions(){
-        return prompt(`
-        0. Cancel Order
-        1. Show Item
-        2. Add Item
-        3. Delete Item
-        4. View Entire Order
-        `);
+
+
+    class Order extends Customer{
+        constructor(item, size, name){
+        super(name)
+        this.item = item;
+        this.size = size;
+        this.names = [];
+        }
+
+        addCustomer(customer){
+            if (customer instanceof Customer) {
+                this.customers.push(customer);
+            }
+        }
+
+
+        addItem(item) {
+            if (item instanceof Order) {
+                this.item.push(item);
+            } 
+        }
+
+
+        describe (){
+            return `${this.name} ordered a ${this.size} ${this.item}.`
+        }
+
     }
+
+    class OrderMenu {
+        constructor() {
+            this.orders = [];
+            this.selectedOrder = null;
+        }
+        
+
+        start() {
+            let selection = this.showMainMenuOptions();
+            while (selection != 0) {
+                switch (selection) {
+                    case '1' :
+                        this.addItem();
+                        break;
+                    case '2' :
+                        this.selectSize();
+                        break;
+                    case '3' :
+                        this.deleteItem();
+                        break;
+                    case '4' :
+                        this.viewEntireOrder();
+                        break;
+                    default:
+                        selection = 0;
+                }
+                selection = this.showMainMenuOptions();
+            }
+            alert('See you on your next Coffee Run!')
+        }
+
+       
+        showMainMenuOptions(){
+            return prompt(`
+            0. Cancel Order
+            1. Add Item
+            2. Add Size
+            3. Delete Item
+            4. View Entire Order
+            `);
+        }
+        
+        showOrderSelectionOptions(orderInfo){
+            return prompt(`
+                0. Back
+                1. Add Item
+                3. Add Size
+                4. Delete Item and Size
+                5. View Entire Order
+             -----------------------------
+                ${orderInfo}   
+            `);
+        }
+
+        displayOrder(){
+            let orderString = '';
+            for (let i = 0; i < this.names.length; i++){
+                orderString += i + ')' + this.names[i].name + '\n';
+            }
+            alert(orderString);
+        }
+
+        addName() {
+            let name = prompt(`You get a coffee! They get a coffee! Who else needs a coffee?`);
+            this.names.push(new Order(name));
+        }
+
+        createOrder() {
+            let name = prompt('Who needs a pick-me-up?');
+            let order = prompt(`Welcome, ${name}! What can we make for you?`);
+            this.order.push(new OrderMenu(name, order));
+        }
+
+        viewOrder() {
+            let index = prompt('Enter the number of the order that you would like to review:');
+            if (index > -1 && index < this.order.length) {
+                this.order = this.order[index];
+                let description = 'Order Name: ' + this.selectedName.name + '\n';
+
+                for (let i = 0; i < this.order.length; i++) {
+                    description += i + ')' + this.order[i].name
+                    + ' - ' + this.order.names[i].item + '\n';
+                }
+
+                let selection = this.showOrderSelectionOptions(description);
+            switch (selection) {
+                case '1':
+                    this.createOrder();
+                    break;
+                case '2':
+                    this.deleteOrder();
+            }
+            }
+        }
+
+    }
+
+
+
+
     
+
+
+
 }
 
+      
 
+/* This will be for viewing an entire order
 
+return `${this.name} has an order for ${this.customers.length} coffees.`
+
+*/
