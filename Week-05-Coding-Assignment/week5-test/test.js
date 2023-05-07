@@ -23,7 +23,7 @@ class Menu {
     }
 
 
-    createOrder(order) {
+    addOrder(order) {
         if (order instanceof Menu) {
             this.order.push(order);
         } 
@@ -69,6 +69,8 @@ class OrderMenu {
     
     showMainMenuOptions() {
         return prompt(`
+        Choose an option below:
+        ----------------------
         0. Cancel Order
         1. Create Order
         2. Delete Order
@@ -98,10 +100,11 @@ class OrderMenu {
     
 
     viewOrder() {
-        let index = prompt('Enter the number of the order that you would like to review:');
+        let index = prompt('Enter the order number that you would like to review:');
         if (index > -1 && index < this.order.length) {
-            this.order = this.order[index];
-            let description = 'Order Name: ' + this.order + '\n';
+            this.selectedOrder = this.order[index];
+
+            let description = 'Order Info: ' + this.order.name + ' ordered a ' + this.selectedOrder.name + '\n';
 
             for (let i = 0; i < this.order.length; i++) {
                 description += i + ')' + this.order.name[i].name
@@ -121,8 +124,20 @@ class OrderMenu {
 
     createOrder() {
         let name = prompt('Who needs a pick-me-up?');
-        let order = prompt(`Welcome, ${name}! What can we make for you?`);
-        this.order.push(new OrderMenu(name, order));
+        let order = prompt(`Welcome, ${name}! What can we make for you?
+        
+        Menu Items:
+
+        Black Coffee                   Vanilla Latte
+        Vanilla Bean                   Carmel Frappaccino
+        Mocha Latte                    Coffee with creamer 
+        Carmel Latte                   ...Or Get Creative!
+        _____________________________________________________
+
+        All menu items are available in: 
+        Small, Medmium, & Large
+        `);
+        this.order.push(new Customer(name, order));
     }
 
     deleteOrder(){
