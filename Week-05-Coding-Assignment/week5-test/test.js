@@ -106,7 +106,7 @@ class OrderMenu {
             let description = 'Order Name: ' + this.selectedOrder.name + '\n';
 
             for (let i = 0; i < this.selectedOrder.name.length; i++) {
-                description += i + ')' + this.selectedOrder.name[i].name + '\n';
+                description += i + ')' + this.selectedOrder.name[i].orderString + '\n';
             }
 
             let selection = this.showOrderSelectionOptions(description);
@@ -127,9 +127,9 @@ class OrderMenu {
         Menu Items:
 
         Black Coffee                   Vanilla Latte
-        Vanilla Bean                   Carmel Frappaccino
+        Vanilla Bean                   Caramel Frappaccino
         Mocha Latte                    Coffee with creamer 
-        Carmel Latte                   ...Or Get Creative!
+        Caramel Latte                   ...Or Get Creative!
         _____________________________________________________
 
         All menu items are available in: 

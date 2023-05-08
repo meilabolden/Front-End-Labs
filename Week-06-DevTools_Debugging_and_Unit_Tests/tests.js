@@ -60,5 +60,17 @@ describe('Week 6 Lab Tests:', () => {
       })
     })
   })
+
+describe('Question 1a: Sorted array of numbers', () => {
+  it ('#Should sort an array in ascending order', () => {
+    const arrayOfNumbers = [1, 5, 3, 2, 4]
+    arrayOfNumbers.sort((a, b) => a - b)
+
+    expect(arrayOfNumbers).to.deep.equal([1, 2, 3, 4, 5])
+  })
+})
+
   /*--------------------------NEW TESTS BELOW-------------------------------*/
 })
+
+

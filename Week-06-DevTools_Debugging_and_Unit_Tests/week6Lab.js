@@ -59,11 +59,11 @@ console.log('Example Question: Add two numbers')
 /* -- STEP 1: DEBUG CODE --*/
 
 // BROKEN CODE EXAMPLE:
-// function addTwoNumbers (num1,num2) {
-//    num1+num2
-// }
+ function addTwoNumbers (num1,num2) {
+    num1+num2
+ }
 
-// console.log(addTwoNumbers(2,3)) // ERROR IN CONSOLE: undefined
+ console.log(addTwoNumbers(2,3)) // ERROR IN CONSOLE: undefined
 // AFTER DEBUGGING:
 function addTwoNumbers(num1, num2) {
   return `num1 + num2 is: ${num1 + num2}`
@@ -74,10 +74,10 @@ console.log(addTwoNumbers(2, 3)) // logs 5
 /*--------------------------------------------------------------------*/
 console.log(`1a: Sorted array of numbers:`)
 
-// const arrayOfNumbers = [1, 5, 3, 2, 4]
-// arrayOfNumbers = arrayOfNumbers.sort((a, b) => a - b)
+const arrayOfNumbers = [1, 5, 3, 2, 4]
+arrayOfNumbers.sort((a, b) => a - b)
 
-// console.log(arrayOfNumbers)
+console.log(arrayOfNumbers)
 /*----------------------------------------------------*/
 console.log(`1b: Manage my wallet `)
 
