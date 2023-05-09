@@ -1,8 +1,9 @@
 /*  */
 
 class Customer {
-    constructor(name){
+    constructor(name, order){
         this.name = name;
+        this.order = order;
     }
     describe() {
         return `${this.name}`;
@@ -38,8 +39,8 @@ class Menu {
 
 class OrderMenu {
     constructor(name) {
-        this.order = [];
-        this.name = [];
+        this.order = []; //add S
+     //   this.name = [];  is this necessary?
         this.selectedOrder = null;
     }
     
@@ -103,11 +104,20 @@ class OrderMenu {
         if (index > -1 && index < this.order.length) {
             this.selectedOrder = this.order[index];
 
-            let description = 'Order Name: ' + this.selectedOrder.name + '\n';
+            let description = 'Order Details: ' + this.selectedOrder.name + " " + this.selectedOrder.order + '\n';
+                console.log(description);
+            // for (let i = 0; i < this.selectedOrder.order.length; i++) {
+            //     description += i + ')' + this.selectedOrder.order[i].orderString + '\n';
+            //     console.log(this.selectedOrder.order[i]);
+            // } 
 
-            for (let i = 0; i < this.selectedOrder.name.length; i++) {
-                description += i + ')' + this.selectedOrder.name[i].orderString + '\n';
-            }
+            for (let i = 0; i < this.order.length; i++) {
+                    description += i + ' ) ' + this.order[i].name + ' - ' + this.order[i].order 
+                    + '\n';
+                     console.log(this.order[i]);
+            } 
+    
+        
 
             let selection = this.showOrderSelectionOptions(description);
             switch (selection) {
@@ -136,6 +146,7 @@ class OrderMenu {
         Small, Medmium, & Large
         `);
         this.order.push(new Customer(name, order));
+        console.log(this.order);
         this.selectedOrder = this.order[this.order.length-1]
         alert(`Great choice! We're on it!`)
     }
