@@ -25,24 +25,26 @@
 // Deck: has 52 cards split evenly between 2 players(26 each), 
 // Dealer: shuffles and deals cards
 
-// Game class represents the card game.
 
-console.log('WAR!');
-
-class Game{
-    constructor(turn, score, value){
-        this.turn = turn;
-        this.score = score;
-        this.value = value;
-    }
-}
 
 // Player class represents each player in the game.
 
 class Player{
-    constructor(player,hand) {
-        this.player = player;
-        this.hand = hand;
+    constructor(name) {
+        this.name = name;
+        this.hand = [];
+        this.points = 0;
+    }
+
+    takeCard(){
+        this.hand.push(this.cards);
+    }
+    showCard() {
+        return this.hand.pop();
+    }
+
+    takeTurn(){
+        console.table(this.hand);
     }
 }        
 
@@ -53,38 +55,77 @@ class Card {
         this.face = face;
         this.suits = suits;
         this.value = value;
+
+        this.face = [2,3,4,5,6,7,8,9,10,'J','Q','K','A'];
+        this.suits = ['🧡', '🍀', '💠', '🧩'];
     }   
+
+    getValue(){
+        //NumValue (2,3,4,5,6,7,8,9,10)
+
+    }
 }
 
-// //Deck class represents all 52 cards.
-        
-class Deck {
-    constructor(){
-        this.deck = this.createDeck()
+
+// Game class represents the card game.
+
+class Game{
+    constructor(turn, winner){
+        this.turn = turn;
+        this.winner = winner;
+        this.cards = []; 
+        this.player1 = player1;
+        this.player2 = player2;
+        this.deck = new Deck();
+        this.dealCards();
+        this.createDeck(); 
     }
-        createDeck(){
-            let newDeck = [];
-            let face = [2,3,4,5,6,7,8,9,10,'J','Q','K','A'];
-            let suits = ['🧡', '🍀', '💠', '🧩']
-                                 
-            for (let f of face) {
-                for (let s of suits) {
-                    let card = new Card(f,s);
-                    newDeck.push(card);
+
+    // //Deck class represents all 52 cards.
+            
+    
+            createDeck(){
+                let newDeck = [];
+                            
+                for (let f of face) {
+                    for (let s of suits) {
+                        let card = new Card(f,s);
+                        newDeck.push(card);
+                    }
+                }
+                return newDeck;
+            }
+
+            shuffleDeck() {
+                for (let i = 0; i < this.deck.length; i++) {
+                    let shuffle = Math.floor(Math.random() * (this.deck.length));
+                    let temp = this.deck[i]
                 }
             }
-            return newDeck;
-        }
-}   console.log(this.createDeck);
-    
+            
+            dealCards () {
+                for (let i = 0; i < 26; i++){
+                    this.player1.takeCard(this.deck.cards.pop());
+                    this.player2.takeCard(this.deck.cards.pop());
+                }
+            }
 
-    
-    
-        
+            playerTurn() {
+                let player1Turn;
+                let player2Turn;
 
+                for (let i = 0; i > 26; i++) {
+                    player1Turn = this.player1.showCard();
+                    player2Turn = this.player2.showCard();
+                    this.compareTurn(player1Turn, player2Turn);
+                }
+            }
+
+}
 
 let game = new Game()
     
+
 /************************************************************/
 
 // Live class practice
@@ -98,17 +139,6 @@ let game = new Game()
 // Shuffle and deal actions // iterate
 // scores for each player, # of cards
 // Create players - the could have scores
-
-
-
-
-
-
-
-
-
-
-
 
 // let front = [2,3,4,5,6,7,8,9,10,'J','Q','K','A'];
 // let suits = ['of hearts', 'of diamonds', 'of clubs', 'of spades']
