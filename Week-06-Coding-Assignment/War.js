@@ -66,19 +66,24 @@ class Card {
     }
 }
 
+class Deck{
+    constructor(cards, dealCards, createDeck){
+        this.cards = cards;
+        this.dealCards = dealCards;
+        this.createDeck = createDeck;
+    }
+}
+    let deck = new Deck();
+
 
 // Game class represents the card game.
 
 class Game{
-    constructor(turn, winner){
+    constructor(turn, winner,player1, player2, cards){
         this.turn = turn;
-        this.winner = winner;
-        this.cards = []; 
+        this.winner = winner; 
         this.player1 = player1;
-        this.player2 = player2;
-        this.deck = new Deck();
-        this.dealCards();
-        this.createDeck(); 
+        this.player2 = player2; 
     }
 
     // //Deck class represents all 52 cards.
@@ -105,8 +110,8 @@ class Game{
             
             dealCards () {
                 for (let i = 0; i < 26; i++){
-                    this.player1.takeCard(this.deck.cards.pop());
-                    this.player2.takeCard(this.deck.cards.pop());
+                    this.player1.takeCard(this.deck.this.cards.pop());
+                    this.player2.takeCard(this.deck.this.cards.pop());
                 }
             }
 
@@ -123,7 +128,7 @@ class Game{
 
 }
 
-let game = new Game()
+let game = new Game();
     
 
 /************************************************************/

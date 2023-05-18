@@ -8,8 +8,7 @@ const assert = chai.assert
 describe('Test 1: Deal Cards', () => {
     it('#Should split the 52 card deck in half and deal 26 cards to each player.') 
         //insert code to be run below
-        playerTurn()
-        {
+        playerTurn(); {
             let player1Turn;
             let player2Turn;
 
@@ -19,6 +18,6 @@ describe('Test 1: Deal Cards', () => {
                 this.compareTurn(player1Turn, player2Turn);
             }
         }
-        expect(Deck / 2)
 });
+
 
