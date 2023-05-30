@@ -1,0 +1,218 @@
+/* Styling for TRH website */
+
+/* ---ELEMENT SELECTORS--- */
+
+html{
+    font-family: Calibri;
+    font-size: medium;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+body{
+    background-color: black;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 1%;
+    box-sizing: border-box;
+}
+
+h1{
+    font-size: xx-large;
+    text-align: center;
+}
+
+h2{
+    font-size: x-large;
+    text-align: center;
+}
+
+h3, p{
+    font-size: large;
+    text-align: center;
+}
+
+img{
+    display: flex, inline-block, center;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around, center;
+    border-radius: 3%;
+    max-height: auto;
+    max-width: 1000px;
+}
+
+table, th, td {
+    align-content: center;
+    border: 2px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+
+form {
+    font-size: large;
+    text-align: left;
+    justify-content: center;
+    width: 50%;
+    padding: 5%;
+    background-color: rgb(30, 61, 61);
+    border-radius: 2%;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 15px, 20px;
+    margin: 8px, 0;
+}
+
+textarea {
+    height: 100px;
+}
+
+input[type=submit] {
+    background-color: gray;
+    border: none;
+    color: antiquewhite;
+    max-width: min-content;
+    padding: 8px 16px;
+    border-radius: 8px;
+    margin: 4px 2px;
+    cursor: grab;
+}
+
+input[type=button] {
+    border: none;
+    padding: 4px 2px;
+    max-width: min-content;
+
+}
+
+a {
+    display: inline-block;
+    padding: 8px;
+    text-decoration: none;
+    overflow: hidden;
+    list-style-type: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+nav ul li a:hover{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    background-color: darkgoldenrod;
+    text-decoration: none;
+}
+
+figcaption {
+    text-align: center;
+    padding: 2%;
+}
+
+/* ---CUSTOM CLASS NAME SELECTORS--- */
+
+.img-div cover-big {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 700px;
+}
+
+.img-div cover-small {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 300px;
+}
+
+img.logo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-height: 1rem;
+    border-radius: 10px;
+}
+
+.trh-crew-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.crew-list img{
+    display: flex;
+    flex-wrap: wrap;
+    display: inline-block;
+    justify-content: space-around;
+    border-radius: 100%;
+}
+
+.merch-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around, center;
+    border-radius: 2%;
+}
+.header {
+    text-align: center;
+}
+
+.border {
+    justify-content: center;
+    border-color: antiquewhite;
+}
+
+.container {
+    text-align: center;
+    justify-content: center;
+}
+
+a:link {
+    color: antiquewhite;
+}
+
+a:visited{
+    color: mediumturquoise;
+}
+
+a:hover{
+    color: darkcyan;
+}
+a:active{
+    color: darkgoldenrod;
+}
+
+/* ----- MEDIA QUERIES for RESPONSIVE DESIGN ----- */
+
+@media only screen and (height: 300px){
+    .TRH-Cover img {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media only screen and (height: 700px){
+    
+}
+
+@media only screen and (max-height: 300px){
+    
+}
+
+
+/* ------------------------- */
