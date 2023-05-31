@@ -39,51 +39,43 @@ img{
     display: flex, inline-block, center;
     flex-wrap: wrap;
     align-content: center;
-    justify-content: space-around, center;
+    justify-content: space-around;
     border-radius: 3%;
     max-height: auto;
     max-width: 1000px;
 }
 
-table, th, td {
-    align-content: center;
-    border: 2px;
+table {
+    border: 1px solid;
+    width: 75%;
+    background-color: slategrey;
 }
 
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-.column {
-    float: left;
-    width: 33.33%;
-    padding: 5px;
+thead, th, td, tr {
+    border: 1px solid;
+    height: 40px;
 }
 
 form {
     font-size: large;
     text-align: left;
-    justify-content: center;
-    width: 50%;
+    max-width: 100%;
+    height: auto;
     padding: 5%;
-    background-color: rgb(30, 61, 61);
+    background-color: rgb(89, 112, 112);
     border-radius: 2%;
 }
 
-input, textarea {
+input [type=text], input [textarea], textarea {
     width: 100%;
-    padding: 15px, 20px;
-    margin: 8px, 0;
-}
-
-textarea {
     height: 100px;
+    padding: 12px, 20px;
+    margin: 8px, 0;
+    box-sizing: border-box;
 }
 
-input[type=submit] {
-    background-color: gray;
+button[type=submit], input[type=button] {
+    background-color: rgb(41, 94, 80);
     border: none;
     color: antiquewhite;
     max-width: min-content;
@@ -93,11 +85,9 @@ input[type=submit] {
     cursor: grab;
 }
 
-input[type=button] {
-    border: none;
-    padding: 4px 2px;
-    max-width: min-content;
-
+input [type=radio] {
+    display: block;
+    position: relative;
 }
 
 a {
@@ -108,8 +98,10 @@ a {
     list-style-type: none;
 }
 
-ul {
+ul li {
     list-style-type: none;
+    display: inline-block;
+    justify-content: space-around;
 }
 
 nav ul li a:hover{
@@ -128,16 +120,20 @@ figcaption {
 
 /* ---CUSTOM CLASS NAME SELECTORS--- */
 
-.img-div cover-big {
+.cover-div {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    max-height: 700px;
 }
 
-.img-div cover-small {
-    display: flex;
-    flex-wrap: wrap;
-    max-height: 300px;
+#cover-big {
+    max-width: 100%;
+    height: auto;
+}
+
+#cover-small {
+    width: 500px;
+    display: none;
 }
 
 img.logo {
@@ -148,17 +144,18 @@ img.logo {
     border-radius: 10px;
 }
 
-.trh-crew-div {
+.founders-div , .trh-crew-div {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
+    align-content: center;
+    max-width: 100%;
+    height: auto;
 }
 
-.crew-list img{
-    display: flex;
-    flex-wrap: wrap;
-    display: inline-block;
+#crew-list {
     justify-content: space-around;
+    align-content: center;
     border-radius: 100%;
 }
 
@@ -168,6 +165,11 @@ img.logo {
     justify-content: space-around, center;
     border-radius: 2%;
 }
+
+.merch-table {
+    display: inline-block;
+}
+
 .header {
     text-align: center;
 }
@@ -177,17 +179,29 @@ img.logo {
     border-color: antiquewhite;
 }
 
-.container {
-    text-align: center;
-    justify-content: center;
+.form {
+    justify-content: space-around;
+    align-content: center;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
 }
 
 a:link {
-    color: antiquewhite;
+    color: darkgoldenrod;
 }
 
 a:visited{
-    color: mediumturquoise;
+    color: cyan;
 }
 
 a:hover{
@@ -199,19 +213,26 @@ a:active{
 
 /* ----- MEDIA QUERIES for RESPONSIVE DESIGN ----- */
 
-@media only screen and (height: 300px){
+@media only screen and (max-width: 800px){
     .TRH-Cover img {
         flex-wrap: wrap;
         justify-content: center;
     }
 }
 
-@media only screen and (height: 700px){
-    
-}
-
-@media only screen and (max-height: 300px){
-    
+@media only screen and (max-width: 300px){
+    body {
+        margin: 1rem;
+    }
+    p,li {
+        font-size: large;
+    }
+    #cover-big {
+        display: none;
+    }
+    #cover-small {
+        display: block;
+    }
 }
 
 
