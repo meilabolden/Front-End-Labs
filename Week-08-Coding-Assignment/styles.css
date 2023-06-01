@@ -20,6 +20,10 @@ body{
     box-sizing: border-box;
 }
 
+footer{
+    background-color: rgb(16, 12, 12);
+}
+
 h1{
     font-size: xx-large;
     text-align: center;
@@ -125,7 +129,6 @@ nav ul li a:hover{
     margin: 0;
     padding: 0;
     display: inline-block;
-    background-color: darkgoldenrod;
     text-decoration: none;
 }
 
@@ -218,14 +221,14 @@ a:link {
 }
 
 a:visited{
-    color: cyan;
+    color: white;
 }
 
 a:hover{
-    color: darkgoldenrod;
+    color: goldenrod;
 }
 a:active{
-    color: darkgoldenrod;
+    color: white;
 }
 
 /* ----- MEDIA QUERIES for RESPONSIVE DESIGN ----- */
