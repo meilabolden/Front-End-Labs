@@ -1,0 +1,69 @@
+<!-- Using HTML, Bootstrap, and JavaScript create a single page website that contains the following:
+A Bootstrap styled table representing your choice of data.
+A Bootstrap styled form that allows a user to add a new row to the table when clicking on submit. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>Family Chores App</title>
+</head>
+<body class="container bg bg-secondary">
+    <br>
+    <div class="card bg bg-light">
+       <div class="card-body">
+            <div class="row">
+                <img src="Images/choresBanner2.jpg" alt="">
+                <h1 class="text-center">Family Chores Chart</h1>
+                <div class="col-sm'">
+                    <div class="form-group">
+                        <label for="new-name">Name</label>
+                        <input type="text" class="form-control" id="new-name" placeholder="Who will complete this chore?">
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="new-start-date">Start Date</label>
+                        <input type="date" class="form-control" id="new-start-date">
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="new-end-date">End Date</label>
+                        <input type="date" class="form-control" id="new-end-date">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm'">
+                    <div class="form-group">
+                        <label for="new-task">Chore</label>
+                        <input type="text" class="form-control" id="new-task" placeholder="Chore">
+                    </div>
+                </div>
+            </div><br>
+            <div>
+                <button type="submit" value="Submit" id="add" class="btn btn-outline-info">Add Chore</button>
+            </div>
+       </div>
+    </div>
+    <table id="list" class="table table-light table-striped">
+        <tr>
+            <th>Name</th>
+            <th>Chore</th>
+            <th>Date Created</th>
+            <th>Start Date</th>
+            <th>Due Date</th>
+            <th>Actions</th>
+        </tr>
+    </table>
+
+    <script src="index.js"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
