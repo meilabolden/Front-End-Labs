@@ -27,139 +27,31 @@
 // Dealer: shuffles and deals cards
 
 
+              // card Values help determine which player hand played the higher value card  
+
+
+
 
 // Player class represents each player in the game.
 
-// class Player{
-//     constructor(name) {
-//         this.name = name;
-//         this.hand = [];
-//         this.points = 0;
-//     }
+class Player{
+    constructor(name = '') {
+        this.name = name;
+        this.hand = [];
+        this.points = 0;
+    }
 
-//     takeCard(){
-//         this.hand.push(this.cards);
-//     }
-//     showCard() {
-//         return this.hand.pop();
-//     }
+    takeCard(cards){
+        this.hand.push(this.cards);
+    }
+    showCard() {
+        return this.hand.pop();
+    }
 
-//     takeTurn(){
-//         console.table(this.hand);
-//     }
-// }        
-
-//  // // Card class represents all cards in the deck.
-        
-// class Card {
-//     constructor(face, suits, value){
-//         this.face = face;
-//         this.suits = suits;
-//         this.value = value;
-
-//         this.face = [2,3,4,5,6,7,8,9,10,'J','Q','K','A'];
-//         this.suits = ['🧡', '🍀', '💠', '🧩'];
-//     }   
-
-//     getValue(){
-//         //NumValue (2,3,4,5,6,7,8,9,10)
-
-//     }
-// }
-
-// class Deck{
-//     constructor(cards, dealCards, createDeck){
-//         this.cards = cards;
-//         this.dealCards = dealCards;
-//         this.createDeck = createDeck;
-//     }
-// }
-//     let deck = new Deck();
-
-
-// // Game class represents the card game.
-
-// class Game{
-//     constructor(turn, winner,player1, player2, cards){
-//         this.turn = turn;
-//         this.winner = winner; 
-//         this.player1 = player1;
-//         this.player2 = player2; 
-//     }
-
-//     // //Deck class represents all 52 cards.
-            
-    
-//             createDeck(){
-//                 let newDeck = [];
-                            
-//                 for (let f of face) {
-//                     for (let s of suits) {
-//                         let card = new Card(f,s);
-//                         newDeck.push(card);
-//                     }
-//                 }
-//                 return newDeck;
-//             }
-
-//             shuffleDeck() {
-//                 for (let i = 0; i < this.deck.length; i++) {
-//                     let shuffle = Math.floor(Math.random() * (this.deck.length));
-//                     let temp = this.deck[i]
-//                 }
-//             }
-            
-//             dealCards () {
-//                 for (let i = 0; i < 26; i++){
-//                     this.player1.takeCard(this.deck.this.cards.pop());
-//                     this.player2.takeCard(this.deck.this.cards.pop());
-//                 }
-//             }
-
-//             playerTurn() {
-//                 let player1Turn;
-//                 let player2Turn;
-
-//                 for (let i = 0; i > 26; i++) {
-//                     player1Turn = this.player1.showCard();
-//                     player2Turn = this.player2.showCard();
-//                     this.compareTurn(player1Turn, player2Turn);
-//                 }
-//             }
-
-// }
-
-// let game = new Game();
-    
-
-/************************************************************/
-
-// Live class practice
-/**
- * 4 suits
- * 13 cards / suit 2 - A
- * 52 unique cards
- */
-
-
-
-const Face = ["2","3","4","5","6","7","8","9","10","J","Q","K","A"]; //Card Face
-const Suits = ['🧡', '🍀', '💠', '🧩']; // Card Suit
-const Values = {
-    "2" : 2,
-    "3" : 3,
-    "4" : 4,
-    "5" : 5,
-    "6" : 6,
-    "7" : 7,
-    "8" : 8,
-    "9" : 9, 
-    "10" : 10,
-    "J" : 11,
-    "Q" : 12,
-    "K" : 13,
-    "A" : 14,
-}               // card Values help determine which hand played the higher value card
+    takeTurn(){
+        console.table(this.hand);
+    }
+}  
 
 class Card {
     constructor(face, suit, value){
@@ -169,73 +61,144 @@ class Card {
     }
 }
 
-function newDeck (){
-    return Face.flatMap(face => {
-        return Suits.flatMap(suit => {
-            return new Card(face, suit)
-        })
-    })
+class Deck{
+    constructor(){
+        this.cards = [];
+        this.displayDeck();
+        this.createDeck();
+    }
+
+    createDeck() {
+        this.displayDeck();
+        this.shuffle();
+        return this.cards 
+    }
+    
+    // Card class represents all cards in the deck.
+            
+    displayDeck() {
+    
+        const Face = ["2","3","4","5","6","7","8","9","10","J","Q","K","A"]; //Card Face
+        const Suits = ['🧡', '🍀', '💠', '🧩']; // Card Suit
+        const Values = {
+            "2" : 2,
+            "3" : 3,
+            "4" : 4,
+            "5" : 5,
+            "6" : 6,
+            "7" : 7,
+            "8" : 8,
+            "9" : 9, 
+            "10" : 10,
+            "J" : 11,
+            "Q" : 12,
+            "K" : 13,
+            "A" : 14,
+        }
+    
+        for (let i = 0; i < Suits.length; i++){
+            for(let j = 0; j < Face.length; j++){
+                this.cards.push(new Card(Face[j], Suits[i], j + 2))
+            }
+        }
+    
+    } 
+
+    shuffle() {
+        let temp = 0;
+        for (let i = 0; i < this.cards.length; i++) {
+            let shuffle = Math.floor(Math.random() * (51) + 1);
+            temp = this.cards[i];
+            this.cards[i] = this.cards[shuffle]
+            this.cards[shuffle] = temp
+        }    
+    }
+    
 }
+    let deck = new Deck();
 
-class Deck {
-    constructor(cards = newDeck(), player1, player2, turn, winner){
-        this.cards = cards;
-        this.player1 = player1;
-        this.player2 = player2;
-        this.turn = turn;
-        this.winner = winner;
+    // Game class represents the card game.
+
+
+class Game {
+    constructor(playerName1, playerName2){
+        this.deck = new Deck();
+        this.player1 = new Player(playerName1);
+        this.player2 = new Player(playerName2); 
+        this.dealCards();
+        this.playerTurn = 1; 
     }
 
-    get deckOfCards(){
-        return this.cards.length;
-    }
-
-    shuffleCards() {
-        for (let i = this.deckOfCards - 1; i > 0; i--) {
-            const shuffledDeck = Math.floor(Math.random() * (i + 1));
-            let oldDeck = this.cards[shuffledDeck]
-            this.cards[shuffledDeck] = this.cards[i]
-            this.cards[i] = oldDeck
+ // Deck class represents all 52 cards.
+            
+               
+    dealCards () {
+        for (let i = 0; i < 26; i++){
+            this.player1.takeCard(this.deck.cards.pop());
+            this.player2.takeCard(this.deck.cards.pop());
         }
     }
 
+    playerTurn() {
+        let player1Turn;
+        let player2Turn;
 
-    roundWinner(player1Deck, player2Deck){
-        if (player1Deck.value > player2Deck.value) {
-            this.player1Deck.points += 1;
-            console.log("Player 1 wins this round!");
+        for (let i = 0; i > 26; i++) {
+            player1Turn = this.player1.showCard();
+            player2Turn = this.player2.showCard();
+            this.roundWinner(player1Turn, player2Turn);
+        }
+    }
+
+    roundWinner(player1Turn, player2Turn){
+        if (player1Turn.value > player2Turn.value) {
+            this.player1.points += 1;
+            console.log(`Player1 hand: ${player1.showCard()}\nPlayer2 hand: ${player2.showCard()}`);
             console.log("Player 1 receives 1 point.");
-        } if (player2Deck > player1Deck) {
-            this.player2Deck.points += 1;
-            console.log("Player 2 wins this round!");
+        } if (player1Turn.value < player2Turn.value) {
+            this.player2.points += 1;
+            console.log(`Player1 hand: ${player1.showCard()}\nPlayer2 hand: ${player2.showCard()}`);
             console.log("Player 2 receives 1 point.");
-        } else if (player1Deck === player2Deck) {
-            this.player1Deck.points += 0;
-            this.player2Deck.points += 0;
+        } if (player1Turn.value == player2Turn.value) {
+            console.log(`Player1 hand: ${player1.showCard()}\nPlayer2 hand: ${player2.showCard()}`);
             console.log("Tie round, no winner.");
         }
-        return this.winner;
+        
+    }
+
+    getValue(){
+        //NumValue (2,3,4,5,6,7,8,9,10)
+        return `${this.player1.points} vs. ${this.player2.points}`;
+    }
+
+    ultimateWinner(){
+        if (this.player1.points > this.player2.points) {
+            console.log('Player 1 WINS!')
+        }
+        if (this.player1.points < this.player2.points) {
+            console.log('Player 2 WINS!')
+        }
+        else if (this.player1.points == this.player2.points) {
+            console.log('TIE GAME!')
+        }
     }
 }
 
+let game = new Game();
+game.deck.shuffle();
+game.dealCards();
+game.playerTurn();
+console.log(game.getValue());
+console.log(game.ultimateWinner())
 
 
-playGame()
-function playGame() {
-    const deck = new Deck();
-    deck.shuffleCards();
     
-    const dealCards = Math.ceil(deck.deckOfCards / 2);
-    player1Deck = new Deck(deck.cards.slice(0, dealCards));
-    player2Deck = new Deck(deck.cards.slice(dealCards, deck.deckOfCards));
-
-    console.log(`
-    Player1: ${player1Deck.deckOfCards}
-    Player2: ${player2Deck.deckOfCards}
-    `);
+ 
     
-   
-}
+
+/************************************************************/
+
+
 
 
 

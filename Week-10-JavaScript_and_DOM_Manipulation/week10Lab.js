@@ -34,17 +34,41 @@ Part 1: Create a form with only JavaScript`)
  * Step 1: Uncomment out the 'console.log(myForm)' at the bottom of the section.
  * Step 2: Using let, make a new variable called 'myForm'.
  * Step 3: Set it to be equal to document.createElement('form') // check the result in the console.
- * Step 4: Repeat steps 1 and 2, but with: myNameLabel, myNameInput
+ * Step 4: Repeat steps 2 and 3, but with: myLabel, myInput . This input will be used to enter a name.
  * Step 5: Set the .innerHTML of myLabel to be equal to 'Name'
  * Step 6: Append myLabel to myForm, then append myInput to myForm
  * Step 7: Append myForm to document.body
            You should now have a label and a input on your website.
            Do the same steps, appending a label/input for Email, and a submit button to your form.
  * ↓ YOUR CODE HERE ↓ */
+let myForm = document.createElement('form');
+let myLabel = document.createElement('Label');
+let myInput = document.createElement('Input');
 
-// console.log(myForm)
+myLabel.innerHTML = 'Name';
+
+myForm.append(myLabel);
+myForm.append(myInput);
+
+document.body.append(myForm);
+
+let myEmailLabel = document.createElement('label');
+let myEmailInput = document.createElement('input');
+
+myEmailLabel.innerHTML = 'Email';
+
+mySubmitButton = document.createElement('button');
+
+mySubmitButton.innerHTML = 'Submit';
+
+myForm.append(myEmailLabel);
+myForm.append(myEmailInput);
+myForm.append(mySubmitButton);
+
+console.log(myForm);
+
 //Question: Besides changing the innerHTML, what other HTML things can we change using JavaScript?
-//Answer:
+//Answer: id, class, style
 
 /*------------------------ Styling a form with only JavaScript------------------------*/
 console.log(`-------------------------- 
@@ -59,9 +83,14 @@ Part 2: Styling our form with only JavaScript`)
  *  Step 3: Give your form a display of flex, a flex-direction of column, and a max-width of 250px
  *
  * ↓ YOUR CODE HERE ↓ */
+myForm.style.backgroundColor = 'blue';
+myForm.style.color = 'white';
+myForm.style.display = 'flex';
+myForm.style.flexDirection = 'column';
+myForm.style.maxWidth = '250px';
 
 //Question: Do you prefer styling with JavaScript or CSS?
-//Answer:
+//Answer: CSS
 
 /*------------------------ Creating a table with only JavaScript ------------------------*/
 console.log(`-------------------------- 
@@ -79,11 +108,30 @@ Part 3: Creating a table with only JavaScript`)
 
  * Final Step: Style your table using JavaScript starting with a border. You may need to target more element/nodes than we did with myTable.
  * ↓ YOUR CODE HERE ↓ */
+let myTable = document.createElement('table');
+let myTR = document.createElement('tr');
+let myTDName = document.createElement('td');
+let myTDEmail = document.createElement('td');
 
-// console.log(myTable)
+myTDName.innerHTML = 'Name';
+myTDEmail.innerHTML = 'Email';
+
+myTable.append(myTDName);
+myTable.append(myTDEmail);
+
+myTable.append(myTR);
+myTR.append(myTDName);
+myTR.append(myTDEmail);
+
+
+document.body.append(myTable);
+
+myTable.style.border = '1px solid black'
+
+console.log(myTable)
 //Question: While this is clearly a more round-about way of making a table, how can using JavaScript in this way
 //          more beneficial than HTML?
-//Answer:
+//Answer: You don't have to rely on linking external sheets for styling.
 
 /*------------------------ Changing our body background on click ------------------------*/
 console.log(`-------------------------- 
@@ -103,19 +151,28 @@ Part 4: Changing our background on click`)
  * Step 7: Click the button in your index.html and see the background change!
  *
  * ↓ YOUR CODE HERE ↓ */
+const myButton = document.getElementById('myButton').addEventListener('click', () => {
+   document.body.style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+});
+
 
 //Question: What other event listeners are there?
 //             Try them out by replacing 'click' in your function above!
-//Answer:
+//Answer: mouseover, mouseup, mousedown, scroll, mousemove
 
 console.log(`-----------Finished------------`)
 
+console.log('Extra Project Ideas: ');
 /**
- * Extra Project Ideas:
- *
  * 1: Create a button that changes the innerHTML of a div back and forth from 'Hello' to 'World'
  * 2: Create an image that disappears when you hover over it, and reappears when you hover off.
  * 3: When you click your form button, get the input values of your name/email input,
  *    and append a new <tr> containing those values to your tBody element.
  *    Look into event.preventDefault(). Buttons inside of forms have a default setting to refresh the page.
  */
+
+
+const myButtonDiv = document.getElementById('myButtonDiv').addEventListener('click', () => {
+   document.myDiv.innerHTML = `Hello`;
+})
+
