@@ -40,16 +40,16 @@
  *
  * ↓ YOUR CODE HERE ↓ */
 
-let div = $('.put-here')
-let input = $('#input-value')
+let div = $('.put-here');
+let input = $('#input-value');
 
 function replaceTextInDiv() {
-  let newText = input.val()
-  div.text(newText)
-  input.val('')
-}
+  let newText = input.val();
+  div.text(newText);
+  input.val('');
+};
 
-console.log($('#input-value').val())
+console.log($('#input-value').val());
 /*------------------------------------------------*/
 // Question 2: Before and After
 
@@ -60,9 +60,9 @@ console.log($('#input-value').val())
  *
  * ↓ YOUR CODE HERE ↓ */
 
-$('.dog').before("<div><img src='images/fish.png' width='200'><div>")
+$('.dog').before("<div><img src='images/fish.png' width='200'><div>");
 
-$('.dog').after("<div><img src='images/cat.png' width='200'><div>")
+$('.dog').after("<div><img src='images/cat.png' width='200'><div>");
 
 /*-------------------------------------------------*/
 // Question 3: Remove
@@ -74,7 +74,7 @@ $('.dog').after("<div><img src='images/cat.png' width='200'><div>")
  *
  * ↓ YOUR CODE HERE ↓ */
 
-$('#lorem2').remove()
+$('#lorem2').remove();
 
 /*-------------------------------------------------*/
 // Question 4: AJAX with JQuery
@@ -103,13 +103,13 @@ $.get(CATS_API_URL, (data) => {
  *
  * ↓ YOUR CODE HERE ↓ */
 
-let JOKES_API_URL = 'https://official-joke-api.appspot.com/random_joke'
+let JOKES_API_URL = 'https://official-joke-api.appspot.com/random_joke';
 
 $.get(JOKES_API_URL, (data) => {
   console.log(data)
-  $('.jokes').prepend(`<p> ${data.setup} </p>`)
-  $('.jokes').append(`<p> ${data.punchline} </p>`)
-})
+  $('.jokes').prepend(`<p> ${data.setup} </p>`);
+  $('.jokes').append(`<p> ${data.punchline} </p>`);
+});
 
 /*--------------------------------------------------*/
 
@@ -136,13 +136,13 @@ $.get(JOKES_API_URL, (data) => {
 	*
 	* ↓ YOUR CODE HERE ↓ */
 
-$.get('http://localhost:3000/gradebook', (data) => console.log(data))
+$.get('http://localhost:3000/gradebook', (data) => {
+  console.log(data);
+})
 
 $.get('http://localhost:3000/gradebook/7', (data) => {
   console.log(data)
-  $('.result').text(
-    data.firstname + ' ' + data.lastname + ', Grade: ' + data.grade + '%'
-  )
+  $('.result').text(data.firstname + ' ' + data.lastname + ', Grade: ' + data.grade + '%')
 })
 $.get('http://localhost:3000/gradebook/12', (data) => {
   console.log(data)
@@ -175,5 +175,19 @@ $('.test').on('click', function () {
  *
  *
  * ↓ YOUR CODE HERE ↓ */
+$('.postBtn').on('click', function(){
+  let first = $('#firstname').val();
+  let last = $('#lastname').val();
+  let grade = $('#grade').val();
 
+  const API = 'http://localhost:3000/gradebook';
+
+  $.post(API,
+    {
+      "firstname": first,
+      "lastname": last,
+      "grade": grade
+    }
+    )
+})
 /*--------------------------------------------------*/
