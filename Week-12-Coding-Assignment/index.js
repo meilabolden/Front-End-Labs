@@ -1,3 +1,5 @@
+// Original code from week 10 project disabled to use POST, PUT, PATCH or DELETE requests.
+
 // let id = 0;
 
 // document.getElementById('addChore').addEventListener('click', () => {
@@ -29,7 +31,11 @@
 // };
 
 
+// Local host
+
 const URL_ENDPOINT = 'http://localhost:3000/familyChores';
+
+// .get will display items on the table
 
 $.get(URL_ENDPOINT).then(data => {
     data.map(chore => {
@@ -48,6 +54,8 @@ $.get(URL_ENDPOINT).then(data => {
     })
 })
 
+// .post will add the inputs to the table and db.json
+
 $('#addChore').on('click' ,function () {
 
     $.post(URL_ENDPOINT, {
@@ -59,6 +67,7 @@ $('#addChore').on('click' ,function () {
     })
 })
 
+// Delete will remove ID items from the table and db.json
 
 function deleteChore(id) {
     $.ajax(`${URL_ENDPOINT}/${id}`, {
@@ -67,21 +76,21 @@ function deleteChore(id) {
 }
 
 
+// Put will edit/update ID items on the table and db.json
 
-function updateChore(id) {
-    let choreId = $('#updateChore').val()
+function updateChore() {
 
-    $.ajax(`${URL_ENDPOINT}/${choreId}`, {
+ 
+    $.ajax(`${URL_ENDPOINT}/${id}`, {
         method: 'PUT',
+        dataType: 'json',
         data: {
-            name: $('#new-name').val(),
-           
-            startDate: $('#new-start-date').val(),
-            dueDate: $('#new-end-date').val(),
-            chore: $('#new-task').val()
+            name: $('#update-name').val(),
+            startDate: $('#update-start-date').val(),
+            dueDate: $('#update-end-date').val(),
+            chore: $('#update-task').val()
         }
     })
-    
 }
 
 $('#updateChore').click(updateChore);
