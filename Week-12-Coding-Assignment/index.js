@@ -1,4 +1,4 @@
-// Original code from week 10 project disabled to use POST, PUT, PATCH or DELETE requests.
+// Original code from week 10 project disabled to use GET, POST, PUT, or DELETE requests.
 
 // let id = 0;
 
