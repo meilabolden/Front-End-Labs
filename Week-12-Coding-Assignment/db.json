@@ -1,53 +1,11 @@
 {
   "familyChores": [
     {
-      "name": "Miles",
-      "startDate": "2023-06-28",
-      "dueDate": "2023-06-29",
-      "chore": "Clean room",
-      "id": 4
-    },
-    {
       "name": "Meila",
-      "startDate": "2023-06-30",
-      "dueDate": "2023-06-30",
-      "chore": "Clean room",
-      "id": 6
-    },
-    {
-      "name": "Ty",
-      "startDate": "2023-06-30",
-      "dueDate": "2023-06-30",
-      "chore": "Clean bathroom",
-      "id": 7
-    },
-    {
-      "name": "Mia",
       "startDate": "2023-06-28",
-      "dueDate": "2023-06-28",
-      "chore": "Put away laundry",
-      "id": 8
-    },
-    {
-      "name": "Ty",
-      "startDate": "2023-06-29",
       "dueDate": "2023-06-29",
-      "chore": "Mow the lawn",
-      "id": 9
-    },
-    {
-      "name": "Ty",
-      "startDate": "2023-07-03",
-      "dueDate": "2023-07-03",
-      "chore": "Clean the grill",
-      "id": 10
-    },
-    {
-      "name": "Mia",
-      "startDate": "2023-06-27",
-      "dueDate": "2023-06-27",
-      "chore": "Clean up toys",
-      "id": 12
+      "chore": "Laundry",
+      "id": 1
     }
   ]
 }

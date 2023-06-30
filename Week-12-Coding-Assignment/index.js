@@ -31,11 +31,13 @@
 // };
 
 
+
 // Local host
 
 const URL_ENDPOINT = 'http://localhost:3000/familyChores';
 
 // .get will display items on the table
+
 
 $.get(URL_ENDPOINT).then(data => {
     data.map(chore => {
@@ -94,4 +96,5 @@ function updateChore() {
 }
 
 $('#updateChore').click(updateChore);
+
 
