@@ -18,70 +18,17 @@ body {
 .card {
     width: 100px;
     height: 100px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(209, 183, 223);
     border: solid 1px rgb(8, 47, 186);
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: xx-large;
 }
 
-.circle {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: 15px solid yellow;
-    box-sizing: border-box;
-}
-
-.cross {
-    height: 80px;
-    width: 80px;
-    position: relative;
-}
-
-.cross:before, .cross:after {
-    content: '';
-    position: absolute;
-    background-color: green;
-    rotate: 45deg;
-}
-
-.cross:before {
-    left: 50%;
-    width: 30%;
-    margin-left: -15%;
-    height: 100%;
-}
-
-.cross:after {
-    top: 50%;
-    width: 100%;
-    margin-top: -15%;
-    height: 30%;
-}
 
 h1, h2, h3, p {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* button {
-    display: flex;
-}
-
-
-
-.card {
-    border-style: 1px solid, #3e836b9a;
-    background-color: rgb(246, 218, 117);
-    height: 150px;
-    width: 150px;
-}
-
-.container {
-    margin: 0 auto;
-}
-
-.main {
-    font-display: center;
-} */
