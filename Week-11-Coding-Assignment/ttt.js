@@ -1,87 +1,124 @@
-const cards = Array.from(document.getElementsByClassName('card'));
-const turnStatement = document.getElementById('turnStatement');
-const resetButton = document.querySelector('ResetBtn');
-const roundWinner = document.getElementById('roundWinner');
-const lines = document.getElementsByClassName('line');
+(function($, undefined) {
+    'use strict'
+
+    $(document).ready(function(){
+        const $board = $('#board');
+
+        const playerX = '<i class="bi bi-x-lg"></i>';
+        const playerO = '<i class="bi bi-circle"></i>';
+        const gameEnded = false;
+        const infoDisplay = document.querySelector('#info')
+
+        infoDisplay.textContent = 'X makes the first move.'
+
+        $board.on('click', '.card', (e) => {
+            console.log(e.target);
+            const $card = $(e.target).closest('.card');
 
 
-let currentPlayer = 'X'; //Sets first move to player X
-let moves = 0; //Board starts with 0 moves
-let gameEnded = false; //determins that the game is still in progress
+            const player = $card.data('player') || 'X';
+            $card.empty();
+            if (player === 'X') {
+                $card.append(playerX);
+                $card.data('player', 'O');
+            } else {
+                $card.append(playerO);
+                $card.data('player', 'X')
+            }
 
+            function addIcon(e) {
+                const iconDisplay = document.createElement('div');
+                iconDisplay.classList.add(playerX);
+                e.target.append(iconDisplay);
+                if(cardElement = playerX)
+                infoDisplay.textContent = `${playerX} makes the next move`;
+                e.target.removeEventListener('click', iconDisplay);
+                checkScore()
+            }
 
-const winningCombos = [
-    [0,1,2], [3,4,5], [6,7,8],
-    [0,3,6], [1,4,7], [2,5,8],
-    [0,4,8], [2,4,6]
-] //winning combinations of cards[index] on the gameboard (diaganol, across, down)
+        })
 
-
-function makeMove(index) {
-    if(!gameEnded && !cards[index].textContent) {
-        cards[index].textContent = currentPlayer;
-        moves++;
-
-        if(checkScore(currentPlayer)) {
-            endGame(currentPlayer + ' wins this round!');
-            const winningCombo = getWinningCombo(currentPlayer);
-            drawWinningLine(winningCombo);
-        } else if (moves === 9) {
-            endGame('It is a DRAW!');
-        } else {
-            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-            turnStatement.textContent = 'Player '  + currentPlayer + ' makes the next move.'
+        function checkScore(){
+            const winningCombos = [
+                [0,1,2], [3,4,5], [6,7,8],
+                [0,3,6], [1,4,7], [2,5,8],
+                [0,4,8], [2,4,6]
+            ]
+        
+            winningCombos.forEach(array => {
+                const crossWins = array.every(card => 
+                    allCards[cell].firstChild?.classList.contains('cross'))
+                    if(crossWins) {
+                        infoDisplay.textContent = 'Cross Wins!'
+                        allCards.forEach(card => card.replaceWith(card.cloneNode(true)))
+                    }
+                    return
+            })
+            
+            winningCombos.forEach(array => {
+                const circleWins = array.every(cell => 
+                    allSquares[cell].firstChild?.classList.contains('circle'))
+                    if(circleWins) {
+                        infoDisplay.textContent = 'Circle Wins!'
+                        allSquares.forEach(square => square.replaceWith(square.cloneNode(true)))
+                    }
+                    return
+            })
         }
-    }      
-} // adds player icon to the gameboard, switches between X and O, switches player turn statement for each move
+    })
+})(jQuery);
 
-function checkScore(player) {
-    return winningCombos.some(combination => {
-        return combination.every(index => cards[index].textContent === player);
-    });
-} //checks the score of player combinations.
 
-function getWinningCombo(player) {
-    return winningCombos.find(combination => {
-        return combination.every(index => cards[index].textContent === player);
-    });
-} //uses winningCombos array to determine a winning player
 
-function drawWinningLine(combination) {
-    const line = document.createElement('div');
-    line.classList.add('line');
-    line.style.setProperty('--start-card', combination[0]);
-    line.style.setProperty('--end-card', combination[2]);
-    document.getElementById('gameBoard').appendChild(line);
-}
 
-function endGame(message) {
-    gameEnded = true;
-    roundWinner.textContent = message;
-    roundWinner.classList.remove('hide');
-} //function to determine when the game has ended
 
-function resetGame() {
-    cards.forEach(card => {
-        card.textContent = '';
-    });
-    
-    currentPlayer = 'X';
-    moves = 0;
-    gameEnded = false;
-    turnStatement.textContent = 'Player X makes the first move';
-    roundWinner.textContent = '';
-    roundWinner.classList.add('hide');
-    removeWinningLine();
-} //function to reset the gameboard for a new game to begin.
 
-function removeWinningLine() {
-  const line = document.getElementsByClassName('line')[0];
-  if (line) {
-    line.parentNode.removeChild(line);
-  }
-}
 
-resetButton.addEventListener('click', resetGame()); //calls the resetGame() function to clear the gameboard
+
+
+// const playerX = '<i class="bi bi-x-lg"></i>';
+// const playerO = '<i class="bi bi-circle"></i>';
+// const player = playerX || playerO;
+
+// const gameEnded = false;
+
+// for (let i = 0; i <= 8; i++) {
+//     document.getElementById(i.toString()).addEventListener('click', function() {
+//         if (this.innerHTML === '' && !gameEnded) {
+//             this.innerHTML = player
+//         }
+//     })
+// }
+
+
+
+
+
+// const gameBoard = document.querySelector('#gameBoard')
+// 
+// const playCard = [
+//     "0","1","2","3","4","5","6","7","8"
+// ]
+
+// let card0 = document.getElementById('0');
+// let card1 = document.getElementById('1');
+// let card2 = document.getElementById('2');
+// let card3 = document.getElementById('3');
+// let card4 = document.getElementById('4');
+// let card5 = document.getElementById('5');
+// let card6 = document.getElementById('6');
+// let card7 = document.getElementById('7');
+// let card8 = document.getElementById('8');
+
+
+// let playerX = 'X';
+// let playerO = 'O';
+
+
+// function playCard() {
+//     cardElement = document.getElementById('id')
+//     cardElement.addEventListener('click', addIcon)
+//     gameBoard.append(cardElement)
+// }
 
 
