@@ -31,46 +31,46 @@ When a player has won, or the board is full and the game results in a draw, a Bo
         <br>
 <!-- Player turn statement -->
         <div>
-            <p id="info"></p>
+            <h3 id="turnStatement">Player X makes the first move</h3>
         </div>
             <br>  
 <!-- Start Game Board -->
     <!-- <div id="gameBoard"></div> -->
 
 
-        <div id="board" class="board"> 
+        <div id="gameBoard" class="board">  
             
             <!-- Game Board Row 1 -->
             <div >
                 <div class="row row-cols-4">
-                <div id="0" class="card"></div>
-                <div id="1" class="card"></div>
-                <div id="2" class="card"></div>
+                <div id="0" class="card" onclick="makeMove(0)"></div>
+                <div id="1" class="card" onclick="makeMove(1)"></div>
+                <div id="2" class="card" onclick="makeMove(2)"></div>
                 </div>
             </div>
             <!-- Game Board Row 2 -->
             <div>
                 <div class="row row-cols-4">
-                <div id="3" class="card"></div>
-                <div id="4" class="card"></div>
-                <div id="5" class="card"></div>
+                <div id="3" class="card" onclick="makeMove(3)"></div>
+                <div id="4" class="card" onclick="makeMove(4)"></div>
+                <div id="5" class="card" onclick="makeMove(5)"></div>
                 </div>
             </div>
             <!-- Game Board Row 3 -->
             <div>
                 <div class="row row-cols-4">
-                <div id="6" class="card"></div>
-                <div id="7" class="card"></div>
-                <div id="8" class="card"></div>
+                <div id="6" class="card" onclick="makeMove(6)"></div>
+                <div id="7" class="card" onclick="makeMove(7)"></div>
+                <div id="8" class="card" onclick="makeMove(8)"></div>
                 </div>
             </div>
         </div>
 <br>
-<p id="winner"></p>
+<p id="roundWinner" class="alert hide"></p>
 
 <!-- Reset Button -->
         <br>
-        <button id="ResetBtn" type="button" class="btn btn-info btn-reset-user" onclick="reset">
+        <button id="ResetBtn" type="button" class="btn btn-info btn-reset-user" onclick="resetGame()">
             Reset Game
         </button>
 
