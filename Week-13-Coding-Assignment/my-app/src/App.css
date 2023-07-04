@@ -28,6 +28,7 @@ a {
   color: blue;
   justify-content: right;
   font-size: medium;
+  margin: .25em;
 }
 
 a:hover {
