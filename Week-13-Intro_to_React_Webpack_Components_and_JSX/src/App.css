@@ -1,0 +1,41 @@
+/* Step 4: Style our new welcome section using the app.css file. Make it your own!
+        Suggested: Center it on the page
+                   Increase the font size since it's considered 'call to action
+                   Consider capitalizing/line-spacing the <h1>, (text-transform
+                   Change the font color so it's legible over your background c
+                   Change the margin-top so there's reasonable space from <nav> */
+
+
+
+Nav {
+    width: 100vw;
+    background-color: darkgoldenrod;
+    color: white;
+    font-size: x-large;
+    padding: 5px;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row; 
+    justify-content: right;
+}
+
+nav ul li {
+    list-style-type: none;
+    margin-right: 1em;
+}
+
+nav ul li:hover {
+    background-color: aqua;
+}
+
+
+/* Welcome Section */
+
+.welcomeSection{
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+}
+
