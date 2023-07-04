@@ -9,20 +9,18 @@ export default class Login extends Component {
     render() {
         return (
 
-            <div>
+            <div className="form">
                 <form id="form">
                     <h3>Login</h3>
 
                     <div id="login">
-                        <label id="usernameLabel">Username</label><br></br>
-                        <input id="usernameInput" placeholder="Username"></input><br></br>
-                        <label id="passwordLabel">Password</label><br></br>
-                        <input id="passwordInputt" placeholder="Password"></input><br></br>
-                        <br></br>
-                        <a href="">Forgot Password?</a> <a href="">Signup</a>
+                        <input id="usernameInput" type="text" placeholder="  Username"></input><br></br>
+                        <input id="passwordInput" type="text"  placeholder="  Password"></input><br></br>
+                        <a href="">Forgot Password</a>   
                         <br></br>
                         <br></br>
-                        <button id="loginButton" type="button" className="btn btn-info">Login</button>
+                        <button id="loginButton" type="submit" className="btn btn-info">Login</button>
+                        <p>Don't have an account? <a href="">Signup</a></p>
                     </div>
                 </form>
             </div> 
