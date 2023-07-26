@@ -53,6 +53,8 @@ class Player{
     }
 }  
 
+// Card class represents the face, suits, and value of the cards in the deck
+
 class Card {
     constructor(suit, face, value){        
         this.suit = suit;
@@ -61,7 +63,7 @@ class Card {
     }
 }
 
-
+// Deck class represents the array of 52 cards in the deck.
 class Deck{
     constructor(){
         this.cards = [];
@@ -85,7 +87,7 @@ class Deck{
         return this.cards 
     }
     
-    // Card class represents all cards in the deck.
+    // DisplayDeck represents all cards in the deck.
             
     displayDeck() {
     

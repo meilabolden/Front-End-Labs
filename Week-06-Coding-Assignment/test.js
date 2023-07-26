@@ -12,9 +12,9 @@ class Card {
 // console.log(card)
 
 class Deck {
-    constructor() {
+    constructor(players) {
         this.cards = [];
-        this.players = [];
+        this.players = players;
         
     }
 
@@ -48,9 +48,11 @@ class Deck {
 
 
 class Player {
-    constructor(name) {
-        this.playerName = name;
-        this.playerCards = [];
+    constructor(player1, player2, playerCards) {
+        // this.playerName = name;
+        player1;
+        player2;
+        playerCards = [];
     }
 }
 
@@ -66,8 +68,14 @@ class Game {
         let deck = new Deck();
         deck.createDeck();
         deck.shuffleDeck();
-        this.players[0].playerCards = deck.cards.slice(0,26);
-        this.players[1].playerCards = deck.cards.slice(26,52);
+        this.playerTurn();
+        this.playerCards;
+        // this.players[0].playerCards = deck.cards.slice(0,26);
+        // this.players[1].playerCards = deck.cards.slice(26,52);
+        // playerCards.this.player1 = deck.cards.slice(0,26);
+        // playerCards.this.player2 = deck.cards.slice(26,52);
+        console.log(`${player1}: ${this.playerCards = deck.cards.slice(0,26)}
+                    \n${player2}: ${this.playerCards = deck.cards.slice(26,52)}`)
     }
 
 
@@ -92,17 +100,17 @@ class Game {
     roundWinner(player1Turn, player2Turn){
         if (player1Turn > player2Turn) {
             this.player1.points += 1;
-            console.log(`Player1 hand: ${player1.showCard()}\n Player2 hand: ${player2.showCard()}`);
+            console.log(`Player1 hand: ${player1Turn.showCard()}\n Player2 hand: ${player2Turn.showCard()}`);
             console.log("Player 1 receives 1 point.");
         } if (player1Turn.value < player2Turn.value) {
             this.player2.points += 1;
-            console.log(`Player1 hand: ${player1.showCard()}\n Player2 hand: ${player2.showCard()}`);
+            console.log(`Player1 hand: ${player1Turn.showCard()}\n Player2 hand: ${player2Turn.showCard()}`);
             console.log("Player 2 receives 1 point.");
-        } if (player1Turn.value == player2Turn.value) {
-            console.log(`Player1 hand: ${player1.showCard()}\n Player2 hand: ${player2.showCard()}`);
+        } else (player1Turn.value == player2Turn.value); {
+            console.log(`Player1 hand: ${player1Turn.showCard()}\n Player2 hand: ${player2Turn.showCard()}`);
             console.log("Tie round, no winner.");
         }
-        
+        return roundWinner();
     }
 
     getValue(){
@@ -124,6 +132,6 @@ class Game {
 }
 
 let cardGame = new Game();
-cardGame.startGame('Player1 ', 'Player2 ');
+cardGame.startGame('Player 1 ', 'Player 2 ');
 console.log(cardGame.players);
-console.log(roundWinner);
+console.log(this.roundWinner);
