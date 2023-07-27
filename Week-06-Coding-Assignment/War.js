@@ -173,4 +173,4 @@ cardGame.deck.shuffleDeck();
 cardGame.dealCards();
 cardGame.playerTurn();
 console.log(cardGame.getValue());
-console.log(cardGame.ultimateWinner())
+console.log(cardGame.ultimateWinner());
