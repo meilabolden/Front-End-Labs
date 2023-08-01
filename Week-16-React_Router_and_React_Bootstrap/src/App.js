@@ -10,6 +10,7 @@ import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 
 import Home from './Components/Home.js'
 import About from './Components/About.js'
+import Shop from './Components/Shop.js'
 
 /** Instruction:
  *    This is a boiler plate, or a "starting point" for React Router.
@@ -54,6 +55,9 @@ export default function App() {
             <li>
               <Link to="/about">About</Link>
             </li>
+            <li>
+              <Link to="/shop">Shop</Link>
+            </li>
           </ul>
         </nav>
 
@@ -67,6 +71,10 @@ export default function App() {
           </Route>  */}
 
         <Switch>
+          <Route path="/shop">
+            <Shop />
+          </Route>
+
           <Route path="/about">
             <About />
           </Route>
@@ -74,6 +82,7 @@ export default function App() {
           <Route path="/">
             <Home />
           </Route>
+
         </Switch>
       </div>
     </Router>
