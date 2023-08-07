@@ -6,23 +6,27 @@ import React, {Component} from 'react';
 // import Merch from './Components/Merch.js'
 import TRHLogo from './TRH-images/TRH Logo.png';
 import { Button, ButtonGroup } from 'react-bootstrap';
+import {BrowserRouter as Link} from 'react-router-dom';
 
 
 export default function NavBar() {
-    return <nav className='nav'>
+    return (
+        <nav className='nav'>
             <marquee><img src={TRHLogo} height="30px" /> </marquee>
 
-            <ButtonGroup variant='Dark'>
-                <Button><a href="home.html" >Home</a></Button>
-                <Button><a href="about.html">About Us</a></Button>
-                <Button><a href="contact.html">Contact Us</a></Button>
-                <Button><a href="merch.html">Merch</a></Button>
-                <Button><a target="_blank" href="https://www.facebook.com/therabbitholelv/">Facebook</a></Button>
-                <Button><a target="_blank" href="https://www.instagram.com/therabbitholelv/?hl=en">Instagram</a></Button>
-                <Button><a target="_blank" href="https://soundcloud.com/therabbitholelv">SoundCloud</a></Button>
-            </ButtonGroup>
-            <a href='/' className='site-title'>The Rabbit Hole LV</a>
+                <Link to="home.html" >Home</Link>
+                <Link to="about.html">About Us</Link>
+                <Link to="contact.html">Contact Us</Link>
+                <Link to="merch.html">Merch</Link>
+                <Link target="_blank" to="https://www.facebook.com/therabbitholelv/">Facebook</Link>
+                <Link target="_blank" to="https://www.instagram.com/therabbitholelv/?hl=en">Instagram</Link>
+                <Link target="_blank" to="https://soundcloud.com/therabbitholelv">SoundCloud</Link>
+           
+            <div>
+                <Link to='/' className='site-title'>The Rabbit Hole LV</Link><img src={TRHLogo} height="30px" />
+            </div>
         </nav>
+    )
 }
 
 

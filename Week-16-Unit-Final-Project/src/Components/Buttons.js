@@ -1,8 +1,8 @@
 import React from 'react';
 
 //Book this Artist Button
-function Button(color, text) {
+function Buttons(color, text) {
     return <button className={ color }>{text}</button>
 }
 
-export default Button;
+export default Buttons;

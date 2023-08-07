@@ -15,9 +15,11 @@ import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 
-// import Home from './Components/Home.js'
-// import About from './Components/About.js'
-// import Merch from './Components/Merch.js'
+import Home from './Components/Home.js'
+import About from './Components/About.js'
+import Merch from './Components/Merch.js'
+import Contact from './Components/Contact.js'
+import Footer from './Components/Footer.js';
 import Carousel from 'react-bootstrap/Carousel';
 import NavBar from './Components/Nav.js';
 import './App.css';
@@ -25,10 +27,31 @@ import './App.css';
 
 function App() {
 
-  return <NavBar />
+  return (
+    <>
+      <NavBar />
+      <div className='container'>
+        <Router>
+            <Route path="/contact">
+              <Contact />
+            </Route>
 
+            <Route path="/merch">
+              <Merch />
+            </Route>
 
-    
+            <Route path="/about">
+              <About />
+            </Route>
+
+            <Route path="/">
+              <Home />
+            </Route>
+        </Router>
+      </div>
+      <Footer />
+    </>
+  )
 }
 
 export default App;
@@ -61,21 +84,21 @@ export default App;
         //   </ButtonGroup>
 
         //   <Switch>
-        //     <Route path="/contact">
-        //       <Shop />
-        //     </Route>
+            // <Route path="/contact">
+            //   <Contact />
+            // </Route>
 
-        //     <Route path="/merch">
-        //       <Shop />
-        //     </Route>
+            // <Route path="/merch">
+            //   <Merch />
+            // </Route>
 
-        //     <Route path="/about">
-        //       <About />
-        //     </Route>
+            // <Route path="/about">
+            //   <About />
+            // </Route>
 
-        //     <Route path="/">
-        //       <Home />
-        //     </Route>
+            // <Route path="/">
+            //   <Home />
+            // </Route>
 
         //   </Switch>
         // </div>
