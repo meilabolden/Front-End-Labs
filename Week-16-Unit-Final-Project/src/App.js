@@ -30,25 +30,8 @@ function App() {
   return (
     <>
       <NavBar />
-      <div className='container'>
-        <Router>
-            <Route path="/contact">
-              <Contact />
-            </Route>
-
-            <Route path="/merch">
-              <Merch />
-            </Route>
-
-            <Route path="/about">
-              <About />
-            </Route>
-
-            <Route path="/">
-              <Home />
-            </Route>
-        </Router>
-      </div>
+      <Home />
+      
       <Footer />
     </>
   )
@@ -59,51 +42,52 @@ export default App;
 
 // export default function App() {
 //   return (
-//     <main>
-//       <Nav />
-//     </main>
+//     <>
+//       <main>
+//         <Nav />
+//       </main>
 
-    // Your entire App.js is the router.
-    // <Container>
-    //   <Router>
-    //   {/* This is your Nav element, that users can see. */}
-        // <div>
-        //   <ButtonGroup>
-        //       <Button variant="outline-warning">
-        //         <Link to="/">Home</Link>
-        //       </Button>
-        //       <Button variant="warning">
-        //         <Link to="/about">About</Link>
-        //       </Button>
-        //       <Button variant="dark">
-        //         <Link to="/merch">Merch</Link>
-        //       </Button>
-        //       <Button variant="info">
-        //         <Link to="/contact">Contact Us</Link>
-        //       </Button>
-        //   </ButtonGroup>
+//       // Your entire App.js is the router.
+//       <Container>
+//         <Router>
+//         {/* This is your Nav element, that users can see. */}
+//           <div>
+//             <ButtonGroup>
+//                 <Button variant="outline-warning">
+//                   <Link to="/">Home</Link>
+//                 </Button>
+//                 <Button variant="warning">
+//                   <Link to="/about">About</Link>
+//                 </Button>
+//                 <Button variant="dark">
+//                   <Link to="/merch">Merch</Link>
+//                 </Button>
+//                 <Button variant="info">
+//                   <Link to="/contact">Contact Us</Link>
+//                 </Button>
+//             </ButtonGroup>
 
-        //   <Switch>
-            // <Route path="/contact">
-            //   <Contact />
-            // </Route>
+//             <Switch>
+//               <Route path="/contact">
+//                 <Contact />
+//               </Route>
 
-            // <Route path="/merch">
-            //   <Merch />
-            // </Route>
+//               <Route path="/merch">
+//                 <Merch />
+//               </Route>
 
-            // <Route path="/about">
-            //   <About />
-            // </Route>
+//               <Route path="/about">
+//                 <About />
+//               </Route>
 
-            // <Route path="/">
-            //   <Home />
-            // </Route>
+//               <Route path="/">
+//                 <Home />
+//               </Route>
 
-        //   </Switch>
-        // </div>
-    //   </Router>
-    // </Container>
-    
+//             </Switch>
+//           </div>
+//         </Router>
+//       </Container>
+//     </>
 //   )
 // }

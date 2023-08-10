@@ -1,6 +1,8 @@
 import React from 'react';
-import { Button, Card, CardGroup, Row } from 'react-bootstrap';
+import { Button, Card, CardGroup, Container, Row } from 'react-bootstrap';
 import Buttons from './Buttons.js'
+import Crew from './Crew.js';
+
 
 export default function About() {
 	
@@ -20,9 +22,9 @@ export default function About() {
 
 				<section>
 					<Row class="border">
-						<iframe style="border: 3px solid #f1f1ec;" width="560" height="315" src="https://www.youtube.com/embed/rHvPVLk8RxM" title="YouTube video player" 
+						<FrameBorder style="border: 3px solid #f1f1ec;" width="560" height="315" src="https://www.youtube.com/embed/rHvPVLk8RxM" title="YouTube video player" 
 							frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-						</iframe>
+						</FrameBorder>
 					</Row>
 				</section>
 
@@ -30,103 +32,13 @@ export default function About() {
 
 				{/* <!--Start Founders section--> */}
 
+				<h2>The Rabbit Hole Crew</h2>
+					<img src="TRH-images/TRH-5yr.jpg" alt="" width="600px"></img>
+					<figcaption>Post Rabbit Hole 5 Year Anniversary Show.</figcaption>
+
+				<Crew />
 					
-						<Row id="container">
-							<h2>The Rabbit Hole Founders</h2>
-						</Row>
-						
-						<div class="Founders-div">
-							<img src="TRH-images/TRH-Founders.jpg" alt="TRH Founders photo." width="600px"></img>
-							<figcaption>From left to right: MayneFrame, Lwkylwky, Mute.</figcaption>
-						</div>
-				
-				{/* <!--Start Founders & Crew List--> */}
-						
-						<Row className="TRH-Crew-div">
-							<h2>The Rabbit Hole Crew</h2>
-								<img src="TRH-images/TRH-5yr.jpg" alt="" width="600px"></img>
-								<figcaption>Post Rabbit Hole 5 Year Anniversary Show.</figcaption>
-									<CardGroup style={{width: '18rem'}} className="crew-list">
-										<Card>
-											<a target="_blank" href="https://linktr.ee/lwkylky">
-												<Card.Img src="TRH-images/LwkyLky3.jpg" height="150px"/>
-											</a>
-											<h4>Lwkylky</h4>
-											<Buttons /> <Br />
-										</Card>
-										<Card>
-											<a target="_blank" href="https://linktr.ee/Mayneframe">
-												<Card.Img src="TRH-images/MayneFrame.jpg" height="150px"/>
-											</a>
-											<h4>MayneFrame</h4>
-											<Buttons /><Br />
-										</Card>
-										<Card>
-											<a target="_blank" href="https://linktr.ee/mutemind">
-												<Card.Img src="TRH-images/Mute2.jpg" height="150px"/>
-											</a>
-											<h4>Mute.</h4>
-											<Buttons /><Br />
-										</Card>
-										<Card>
-											<a target="_blank" href="https://linktr.ee/weirddough">
-												<Card.Img src="TRH-images/Weirddough.jpg" height="150px"/>
-											</a>
-											<h4>Weirddough</h4>
-											<Buttons /><Br />
-										</Card>
-										<Card>
-											<Card.Img src="TRH-images/Supreme-O2.jpg" height="150px"/>
-											<h4>Supreme-O</h4>
-											<Buttons /><Br />
-										</Card>
-										<Card>
-											<Card.Img src="TRH-images/LoDino.jpg" height="150px"/>
-											<h4>Lo Dino</h4>
-											<Buttons /><Br />
-										</Card>
-										<Card>
-											<Card.Img src="TRH-images/Monro.jpg" height="150px"/>
-											<h4>Monro</h4>
-											<Buttons /><Br />
-										</Card>
-										<Card>
-											<Card.Img src="TRH-images/Airyee.jpg" height="150px"/>
-											<h4>Airyee</h4>
-											<Buttons /><Br />
-										</Card>
-										<Card>
-											<Card.Img src="TRH-images/OneOnTheBeat.jpg" height="150px"/>
-											<h4>OneOnTheBeat</h4>
-											<Buttons /><Br />
-										</Card>
-										<Card>
-											<Card.Img src="TRH-images/SoManyFeels.jpg" height="150px"/>
-											<h4>SoManyFeels</h4>
-											<Buttons /><Br />
-										</Card>
-										<Card>
-											<Card.Img src="TRH-images/Uymitsu.jpg" height="150px"/>
-											<h4>Uymitsu</h4>
-											<Buttons /><Br />
-										</Card>
-										<Card>
-											<Card.Img src="TRH-images/Butterscotch.jpg" height="150px"/>
-											<h4>Butterscotch</h4>
-											<Buttons /><Br />
-										</Card>
-										<Card>
-											<Card.Img src="TRH-images/Phillyzane.jpg" height="150px"/>
-											<h4>PhillyZane</h4>
-											<Buttons /><Br />
-										</Card>
-									</CardGroup>
-						</Row> 
-							
-				{/* <!--End Founders & Crew List--> */}
-							
-					
-        	</Container>
+			</Container>
 		
 		)
 }
