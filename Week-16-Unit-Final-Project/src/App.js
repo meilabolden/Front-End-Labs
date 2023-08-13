@@ -15,10 +15,11 @@ import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 
-import Home from './Components/Home.js'
-import About from './Components/About.js'
-import Merch from './Components/Merch.js'
-import Contact from './Components/Contact.js'
+import Home from './Components/Home.js';
+import About from './Components/About.js';
+import Merch from './Components/Merch.js';
+import Contact from './Components/Contact.js';
+import Header from './Components/Header.js';
 import Footer from './Components/Footer.js';
 import Carousel from 'react-bootstrap/Carousel';
 import NavBar from './Components/Nav.js';
@@ -30,7 +31,6 @@ function App() {
   return (
     <>
       <NavBar />
-      <Home />
       
       <Footer />
     </>

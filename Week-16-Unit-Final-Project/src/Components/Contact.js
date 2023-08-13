@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, FormGroup } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
+import TRHLogo from './TRH-images/TRH Logo.png';
 
 export default function Contact() {
 	
@@ -8,7 +9,7 @@ export default function Contact() {
         
         // <!--Start of Contact Form-->
             <Form>
-                <h2>Contact Us</h2>
+                <h2 className='title'>Contact Us<img src={TRHLogo} height="30px" /></h2>
                     <FormGroup id="form" class="center">
                         <Form.Label>Full Name:</Form.Label><Br />
                             <Form.Control type="text"/><Br />

@@ -8,42 +8,41 @@ import Contact from './Contact.js';
 import TRHLogo from './TRH-images/TRH Logo.png';
 import { Button, ButtonGroup } from 'react-bootstrap';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import Header from './Header.js';
 
 
 export default function NavBar() {
     return (
         <nav className='nav'>
-            <marquee><img src={TRHLogo} height="30px" /> </marquee>
+            
+            <Header />
 
-            <ul>
-                <ButtonGroup className='nav-button'>
-                     <Button>
-                        <a href="/">Home</a>
-                    </Button>
-                    <Button>
-                        <a href="/about">About</a>
-                    </Button>
-                    <Button>
-                        <a href="/merch">Merch</a>
-                    </Button>
-                    <Button>
-                        <a href="/contact">Contact Us</a>
-                    </Button>
-                    <Button>
-                        <a target="_blank" href="https://www.facebook.com/therabbitholelv/">Facebook</a>
-                    </Button>
-                    <Button>
-                        <a target="_blank" href="https://www.instagram.com/therabbitholelv/?hl=en">Instagram</a>
-                    </Button>
-                    <Button>
-                        <a target="_blank" href="https://soundcloud.com/therabbitholelv">SoundCloud</a> 
-                    </Button>
-                </ButtonGroup>
-            </ul>
+                <Nav variant='underline' className='nav-buttons'>
+                     <Nav.Item>
+                        <Nav.Link href="http://localhost:3000/home">Home</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link href="http://localhost:3000/about">About</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link href="http://localhost:3000/merch">Merch</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link href="http://localhost:3000/contact">Contact Us</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link target="_blank" href="https://www.facebook.com/therabbitholelv/">Facebook</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link target="_blank" href="https://www.instagram.com/therabbitholelv/?hl=en">Instagram</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link target="_blank" href="https://soundcloud.com/therabbitholelv">SoundCloud</Nav.Link> 
+                    </Nav.Item>
+                </Nav>
 
-            <div>
-                <h1 className='site-title'>The Rabbit Hole LV</h1><img src={TRHLogo} height="30px" />
-            </div>
+
+            
 
            
             <Router>
@@ -75,6 +74,7 @@ export default function NavBar() {
                 <Link target="_blank" to="https://soundcloud.com/therabbitholelv">SoundCloud</Link> */}
            
         </nav>
+        
     )
 }
 
