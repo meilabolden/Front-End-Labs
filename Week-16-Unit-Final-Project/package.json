@@ -4,9 +4,11 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^5.3.1",
+    "bootstrap-icons": "^1.10.5",
     "prop-types": "^15.8.1",
     "react": "^17",
     "react-bootstrap": "^2.8.0",
+    "react-bootstrap-icons": "^1.10.3",
     "react-dom": "^17",
     "react-router-dom": "5.3"
   },

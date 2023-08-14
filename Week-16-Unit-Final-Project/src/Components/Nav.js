@@ -9,6 +9,8 @@ import TRHLogo from './TRH-images/TRH Logo.png';
 import { Button, ButtonGroup } from 'react-bootstrap';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import Header from './Header.js';
+import Cart from './Cart.js';
+import {Cart3} from 'react-bootstrap-icons';
 
 
 export default function NavBar() {
@@ -39,6 +41,9 @@ export default function NavBar() {
                     <Nav.Item>
                         <Nav.Link target="_blank" href="https://soundcloud.com/therabbitholelv">SoundCloud</Nav.Link> 
                     </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link href="/cart"><Cart3 size={20}/></Nav.Link>
+                    </Nav.Item>
                 </Nav>
 
 
@@ -46,6 +51,10 @@ export default function NavBar() {
 
            
             <Router>
+            <Route path="/cart">
+                <Cart />
+                </Route>
+
                 <Route path="/contact">
                 <Contact />
                 </Route>
