@@ -34,28 +34,34 @@ export default function Merch() {
 							<tr>
 								<th>Merch</th>
 								<th>Item Price</th>
+								<th>Buy</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<td>Shirts</td>
 								<td>$25</td>
+								<td><Button>Add to Cart</Button></td>
 							</tr>
 							<tr>
 								<td>Hats</td>
 								<td>$20</td>
+								<td><Button>Add to Cart</Button></td>
 							</tr>
 							<tr>
 								<td>Lighter</td>
 								<td>$7</td>
+								<td><Button>Add to Cart</Button></td>
 							</tr>
 							<tr>
 								<td>Buttons</td>
 								<td>$5</td>
+								<td><Button>Add to Cart</Button></td>
 							</tr>
 							<tr>
 								<td>Stickers</td>
 								<td>$3</td>
+								<td><Button>Add to Cart</Button></td>
 							</tr>
 						</tbody>
 					</Table>
