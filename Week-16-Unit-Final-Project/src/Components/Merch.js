@@ -21,37 +21,11 @@ export default function Merch() {
 		return (
 		
 				<Container fluid>
-					<h1 className='title'>Merch! <img src={TRHLogo} height="30px" /></h1>
+					{/* Commenting out old header image due to resizing issue */}
+					{/* <h1 className='title'>Merch! <img src={TRHLogo} height="30px" /></h1> */}
+					<h1 className='title'>Merch! </h1>
 					<CarouselMerch />
 
-					{/* <Row className="img-src">
-						<div>
-							<img src={TRHButtons} width="200" height="200" alt="TRH Buttons image" />
-								<h4>TRH Buttons</h4> 
-							<img src={TRHStickers} width="200" height="200" alt="TRH Stickers image" />
-								<h4>TRH Stickers </h4> 
-							<img src={TRHHat} width="200" height="200" alt="TRH Hat image" />
-								<h4>TRH Trucker Hat </h4> 
-							<img src={TRHLighter} width="200" height="200" alt="TRH Lighter image" />
-								<h4>TRH Lighter </h4> 
-						</div>
-						<div>
-							<img src={TRHSFront} width="200" height="200" alt="TRH 8 year Anniversary shirt front" />
-								<h4>Special Edition 8yr </h4> 
-							<img src={TRHSBack} width="200" height="200" alt="TRH 8 year Anniversary shirt back" />  
-								<h4>Special Edition 8yr </h4>       
-							<img src={TRHRSFront} width="200" height="200" alt="TRH 8 year Anniversary shirt red font front" />
-								<h4>Special Edition 8yr </h4> 
-							<img src={TRHRSBack} width="200" height="200" alt="TRH 8 year Anniversary shirt red font back" /> 
-								<h4>Special Edition 8yr </h4> 
-						</div>        
-						<div>
-							<img src={TRHWTFront} width="200" height="200" alt="TRH limited edition white shirt front" />
-								<h4>Limited Edition T </h4> 
-							<img src={TRHWTBack} width="200" height="200" alt="TRH limited edition white shirt back" />
-								<h4>Limited Edition T</h4> 
-						</div>
-					</Row> */}
 
 				<h2 className='title'>Merch Prices</h2>
 

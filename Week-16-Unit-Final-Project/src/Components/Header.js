@@ -5,7 +5,8 @@ import TRHLogo from './TRH-images/TRH Logo.png';
 export default function Header() {
     return (
         <Container >
-            <marquee><img src={TRHLogo} height="30px" /> </marquee>
+            {/* Commenting out the marquee due to image resize issue */}
+            {/* <marquee><img src={TRHLogo} height="30px" /> </marquee> */}
 
             <div>
                 <h1 className='site-title'>The Rabbit Hole LV</h1>

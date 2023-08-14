@@ -3,17 +3,57 @@
 }
 
 body {
-    margin: 0;
-    background-color: rgba(170, 169, 169, 0.977);
+    background-color: black;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 1%;
+    box-sizing: border-box;
+    
+}
+
+button[type=submit], input[type=button] {
+    border: none;
+    color: antiquewhite;
+    max-width: content;
+    padding: 8px 16px;
+    border-radius: 8px;
+    margin: 4px 2px;
+    cursor: grab;
+}
+
+h1, h2, h3, h4, p, figcaption  {
+    text-align: center;
+    margin: 1rem;
+    padding: 1rem;
 }
 
 h4 {
     color: cadetblue;
 }
 
-.footer {
-    text-align: center;
+/* .crew-img, img {
+    display: flexbox;
+    justify-content: center;
+} */
 
+.founders-div, .crew-list {
+    display: flexbox;
+    justify-content: center;
+    margin: 1;
+    padding: 0;
+}
+
+.footer {
+    display: flexbox;
+    text-align: center;
+    background-color: rgba(170, 169, 169, 0.977);
+    color: darkslategray;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .header {
@@ -43,17 +83,22 @@ h4 {
     text-align: center;
 }
 
-.carousel-inner, .img-src{
-    width: auto;
-    max-height: 1000px;
+.carousel-inner, .item, img{
+    width: 600px;
+    max-height: 600px;
     margin: auto;
     padding: auto;
 }
 
 .carousel {
-    display: flexbox;
+    display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 
+}
+
+.Image {
+    width: 1rem;
 }
 
 .table {
@@ -97,3 +142,21 @@ h4 {
     width: 100%;
     position: absolute;
   }
+
+  /* ---CUSTOM CLASS NAME SELECTORS--- */
+
+.cover-div, .Founders-div, .crew-img, .TRH-Crew-div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#cover-big {
+    max-width: 100%;
+    height: auto;
+}
+
+#cover-small {
+    width: 500px;
+    display: none;
+}

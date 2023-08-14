@@ -18,68 +18,71 @@ import TRHWTBack from './TRH-images/TRH-WhiteT-back.jpg';
 export default function CarouselMerch() {
 	
     return (
-        <Carousel className='carousel-inner'>
-            <Carousel.Item>
-                <img src={TRHButtons} alt="TRH Buttons image" text='TRH Buttons'/>
-                <Carousel.Caption>
-                    <h4>TRH Buttons</h4> 
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img src={TRHStickers} alt="TRH Stickers image" text='TRH Stickers'/>
-                <Carousel.Caption>
-                    <h4>TRH Stickers </h4>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img src={TRHHat} alt="TRH Hat image" text='TRH Hat'/>
-                <Carousel.Caption>
-                    <h4>TRH Trucker Hat </h4>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img src={TRHLighter} alt="TRH Lighter image" text='TRH Lighter'/>
-                <Carousel.Caption>
-                    <h4>TRH Lighter </h4> 
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img src={TRHSFront} alt="TRH 8 year Anniversary shirt front" text='TRH Shirt'/>
-                <Carousel.Caption>
-                    <h4>Special Edition 8yr </h4>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img src={TRHSBack} alt="TRH 8 year Anniversary shirt back" text='TRH Shirt'/>
-                <Carousel.Caption>
-                    <h4>Special Edition 8yr </h4> 
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img src={TRHRSFront} alt="TRH 8 year Anniversary shirt red font front" text='TRH Shirt'/>
-                <Carousel.Caption>
-                    <h4>Special Edition 8yr </h4> 
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img src={TRHRSBack} alt="TRH 8 year Anniversary shirt red font back" text='TRH Shirt'/>
-                <Carousel.Caption>
-                    <h4>Special Edition 8yr </h4> 
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img src={TRHWTFront} alt="TRH limited edition white shirt front" text='TRH Shirt'/>
-                <Carousel.Caption>
-                    <h4>Limited Edition</h4> 
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img src={TRHWTBack} alt="TRH limited edition white shirt back" text='TRH Shirt'/>
-                <Carousel.Caption>
-                    <h4>Limited Edition</h4> 
-                </Carousel.Caption>
-            </Carousel.Item>
-        </Carousel>
+        // Merch images carousel
+        <Container fluid>
+            <Carousel fade interval={2000} className='carousel-inner'>
+                <Carousel.Item>
+                    <img src={TRHButtons} alt="TRH Buttons image" text='TRH Buttons'/>
+                    <Carousel.Caption>
+                        <h4>TRH Buttons</h4> 
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img src={TRHStickers} alt="TRH Stickers image" text='TRH Stickers'/>
+                    <Carousel.Caption>
+                        <h4>TRH Stickers </h4>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img src={TRHHat} alt="TRH Hat image" text='TRH Hat'/>
+                    <Carousel.Caption>
+                        <h4>TRH Trucker Hat </h4>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img src={TRHLighter} alt="TRH Lighter image" text='TRH Lighter'/>
+                    <Carousel.Caption>
+                        <h4>TRH Lighter </h4> 
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img src={TRHSFront} alt="TRH 8 year Anniversary shirt front" text='TRH Shirt'/>
+                    <Carousel.Caption>
+                        <h4>Special Edition 8yr </h4>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img src={TRHSBack} alt="TRH 8 year Anniversary shirt back" text='TRH Shirt'/>
+                    <Carousel.Caption>
+                        <h4>Special Edition 8yr </h4> 
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img src={TRHRSFront} alt="TRH 8 year Anniversary shirt red font front" text='TRH Shirt'/>
+                    <Carousel.Caption>
+                        <h4>Special Edition 8yr </h4> 
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img src={TRHRSBack} alt="TRH 8 year Anniversary shirt red font back" text='TRH Shirt'/>
+                    <Carousel.Caption>
+                        <h4>Special Edition 8yr </h4> 
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img src={TRHWTFront} alt="TRH limited edition white shirt front" text='TRH Shirt'/>
+                    <Carousel.Caption>
+                        <h4>Limited Edition</h4> 
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img src={TRHWTBack} alt="TRH limited edition white shirt back" text='TRH Shirt'/>
+                    <Carousel.Caption>
+                        <h4>Limited Edition</h4> 
+                    </Carousel.Caption>
+                </Carousel.Item>
+            </Carousel>
+        </Container>
         
     )
 }

@@ -19,16 +19,16 @@ export default function NavBar() {
 
                 <Nav variant='underline' className='nav-buttons'>
                      <Nav.Item>
-                        <Nav.Link href="http://localhost:3000/home">Home</Nav.Link>
+                        <Nav.Link href="/home">Home</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link href="http://localhost:3000/about">About</Nav.Link>
+                        <Nav.Link href="/about">About</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link href="http://localhost:3000/merch">Merch</Nav.Link>
+                        <Nav.Link href="/merch">Merch</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link href="http://localhost:3000/contact">Contact Us</Nav.Link>
+                        <Nav.Link href="/contact">Contact Us</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                         <Nav.Link target="_blank" href="https://www.facebook.com/therabbitholelv/">Facebook</Nav.Link>
@@ -58,7 +58,7 @@ export default function NavBar() {
                 <About />
                 </Route>
         
-                <Route path="/">
+                <Route path="/home">
                 <Home />
                 </Route>
         
