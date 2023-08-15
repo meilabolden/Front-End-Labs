@@ -24,6 +24,13 @@ button[type=submit], input[type=button] {
     cursor: grab;
 }
 
+form {
+    margin: 1rem;
+    padding: 2rem;
+    background-color: darkslategray;
+    border-radius: 2rem;
+}
+
 h1, h2, h3, h4, p, figcaption  {
     text-align: center;
     margin: 1rem;
@@ -39,6 +46,14 @@ h4 {
     justify-content: center;
 } */
 
+#post-form {
+    background-color: lightskyblue;
+}
+
+#update-post {
+    background-color: rgb(232, 231, 231);
+}
+
 .founders-div, .crew-list {
     display: flexbox;
     justify-content: center;
@@ -52,20 +67,12 @@ h4 {
     background-color: rgba(170, 169, 169, 0.977);
     color: darkslategray;
     width: 100%;
-    margin: 0;
-    padding: 0;
+    margin: 0rem;
+    padding: 1.5rem;
 }
 
 .header {
     background-color: black;
-}
-
-.nav {
-    background-color: black;
-    color: whitesmoke;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
 }
 
 .site-title {
@@ -97,25 +104,20 @@ h4 {
 
 }
 
-.Image {
-    width: 1rem;
-}
-
 .table {
     display: flexbox;
     text-align: center;
 }
 
 .nav {
-    padding: 0;
-    margin: 0.5;
-    list-style: none;
+    /* background-color: black; */
     display: flex;
-    
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .nav-link {
-    color: inherit;
+    /* color: gold; */
     text-decoration: none;
     cursor: grab;
     padding: 1;
@@ -145,10 +147,15 @@ h4 {
 
   /* ---CUSTOM CLASS NAME SELECTORS--- */
 
-.cover-div, .Founders-div, .crew-img, .TRH-Crew-div {
+.cover-div, .Founders-div, .crew-img, .TRH-Crew-div{
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+
+.TRH-Crew-div {
+    border-radius: 5%;
 }
 
 #cover-big {

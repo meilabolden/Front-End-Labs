@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, FormGroup, Button } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import TRHLogo from './TRH-images/TRH Logo.png';
+import Message from './MessageBoard';
 
 export default function Contact() {
 	
@@ -48,6 +49,7 @@ export default function Contact() {
                             </div>
                         </FormGroup>
                 </Form>
+
             </Container>
 
         // <!--End of Contact Form-->

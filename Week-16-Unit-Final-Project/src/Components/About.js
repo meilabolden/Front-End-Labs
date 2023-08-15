@@ -38,7 +38,7 @@ export default function About() {
 				<h2>The Rabbit Hole Crew</h2>
 
 				<div className='crew-img'>
-						<img src={TRH5yr} alt="" width="600px"></img>
+						<img src={TRH5yr} alt="5yr wrap-up" ></img>
 				</div>
 
 				<figcaption>Post Rabbit Hole 5 Year Anniversary Show.</figcaption>

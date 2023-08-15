@@ -11,6 +11,7 @@ import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import Header from './Header.js';
 import Cart from './Cart.js';
 import {Cart3} from 'react-bootstrap-icons';
+import Announcements from './Announcements.js';
 
 
 export default function NavBar() {
@@ -19,7 +20,7 @@ export default function NavBar() {
             
             <Header />
 
-                <Nav variant='underline' className='nav-buttons'>
+                <Nav variant='underline' className='nav-links'>
                      <Nav.Item>
                         <Nav.Link href="/home">Home</Nav.Link>
                     </Nav.Item>
@@ -30,19 +31,22 @@ export default function NavBar() {
                         <Nav.Link href="/merch">Merch</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
+                        <Nav.Link href="/announcements">Announcements</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
                         <Nav.Link href="/contact">Contact Us</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link target="_blank" href="https://www.facebook.com/therabbitholelv/">Facebook</Nav.Link>
+                        <Nav.Link href="https://www.facebook.com/therabbitholelv/" target="_blank" rel="noreferrer">Facebook</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link target="_blank" href="https://www.instagram.com/therabbitholelv/?hl=en">Instagram</Nav.Link>
+                        <Nav.Link href="https://www.instagram.com/therabbitholelv/?hl=en" target="_blank" rel="noreferrer">Instagram</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link target="_blank" href="https://soundcloud.com/therabbitholelv">SoundCloud</Nav.Link> 
+                        <Nav.Link href="https://soundcloud.com/therabbitholelv" target="_blank" rel="noreferrer">SoundCloud</Nav.Link> 
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link href="/cart"><Cart3 size={20}/></Nav.Link>
+                        <Nav.Link href="/cart">My Cart<Cart3 size={20}/></Nav.Link>
                     </Nav.Item>
                 </Nav>
 
@@ -62,6 +66,10 @@ export default function NavBar() {
                 <Route path="/merch">
                 <Merch />
                 </Route>
+
+                <Route path="/announcements">
+                <Announcements />
+                </Route>
         
                 <Route path="/about">
                 <About />
@@ -72,66 +80,9 @@ export default function NavBar() {
                 </Route>
         
             </Router>
-            
-
-                {/* <Link to="home.html" >Home</Link>
-                <Link to="about.html">About Us</Link>
-                <Link to="contact.html">Contact Us</Link>
-                <Link to="merch.html">Merch</Link>
-                <Link target="_blank" to="https://www.facebook.com/therabbitholelv/">Facebook</Link>
-                <Link target="_blank" to="https://www.instagram.com/therabbitholelv/?hl=en">Instagram</Link>
-                <Link target="_blank" to="https://soundcloud.com/therabbitholelv">SoundCloud</Link> */}
-           
+                       
         </nav>
         
     )
 }
 
-
-// export default class Nav extends React.Component {
-	
-//     render() {
-//         return (
-//             <nav className='navBar'>
-//                 <Router>
-//                 {/* This is the Nav element, that users can see. */}
-//                     <div>
-//                         <ButtonGroup>
-//                             <Button variant="outline-warning">
-//                                 <Link to="/">Home</Link>
-//                             </Button>
-//                             <Button variant="warning">
-//                                 <Link to="/about">About</Link>
-//                             </Button>
-//                             <Button variant="dark">
-//                                 <Link to="/merch">Merch</Link>
-//                             </Button>
-//                             <Button variant="info">
-//                                 <Link to="/contact">Contact Us</Link>
-//                             </Button>
-//                         </ButtonGroup>
-        
-                        // <Switch>
-                        //     <Route path="/contact">
-                        //     <Shop />
-                        //     </Route>
-        
-                        //     <Route path="/merch">
-                        //     <Shop />
-                        //     </Route>
-        
-                        //     <Route path="/about">
-                        //     <About />
-                        //     </Route>
-        
-                        //     <Route path="/">
-                        //     <Home />
-                        //     </Route>
-        
-                        // </Switch>
-//                     </div>
-//                 </Router>
-//             </nav>
-//         )
-//     }
-// }
