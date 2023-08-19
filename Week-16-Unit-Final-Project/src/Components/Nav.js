@@ -17,8 +17,12 @@ import Announcements from './Announcements.js';
 export default function NavBar() {
     return (
         <nav className='nav'>
+
+            {/* links Header component to display above the navbar */}
             
             <Header />
+
+            {/* Displays the navbar on every routed page */}
 
                 <Nav variant='underline' className='nav-links'>
                      <Nav.Item>
@@ -51,7 +55,7 @@ export default function NavBar() {
                 </Nav>
 
 
-            
+            {/* Routes navbar items to the cooresponding page */}
 
            
             <Router>

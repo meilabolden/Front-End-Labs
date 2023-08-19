@@ -18,7 +18,7 @@ import TRHWTBack from './TRH-images/TRH-WhiteT-back.jpg';
 export default function CarouselMerch() {
 	
     return (
-        // Merch images carousel
+        // Displays all Merch images in a carousel
         <Container fluid>
             <Carousel fade interval={2000} className='carousel-inner'>
                 <Carousel.Item>

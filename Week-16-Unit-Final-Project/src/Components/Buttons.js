@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 function Buttons(color, text) {
     return (
         <>
-        {/* Book an Artist button */}
+        {/* Book an Artist button, non functional at this time */}
             <Button type='submit' variant='info'>Book Artist</Button>
         </>
     )

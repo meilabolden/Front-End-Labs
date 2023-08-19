@@ -1,7 +1,7 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 
-// TRH origin video
+// TRH origin video to  display on the About page
 
 const Video = ({embedId}) => (
     <div className="video-responsive">

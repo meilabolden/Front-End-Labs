@@ -36,7 +36,7 @@ export default function Crew() {
 
                         <figcaption>From left to right: MayneFrame, Lwkylwky, Mute.</figcaption>
 				
-				{/* <!--Start Founders & Crew List--> */}
+				{/* <!--Start Founders & Crew cards List--> */}
 						
 						<Container className="TRH-Crew-div">
 							

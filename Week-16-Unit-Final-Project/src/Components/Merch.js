@@ -26,7 +26,7 @@ export default function Merch() {
 					<h1 className='title'>Merch! </h1>
 					<CarouselMerch />
 
-
+					{/* Merch table with items and prices */}
 				<h2 className='title'>Merch Prices</h2>
 
 					<Table responsive className="table">

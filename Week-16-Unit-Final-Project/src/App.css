@@ -47,11 +47,12 @@ h4 {
 } */
 
 #post-form {
-    background-color: lightskyblue;
+    background-color: rgb(161, 185, 200);
 }
 
 #update-post {
     background-color: rgb(232, 231, 231);
+    color: black;
 }
 
 .founders-div, .crew-list {
@@ -110,7 +111,8 @@ h4 {
 }
 
 .nav {
-    /* background-color: black; */
+    background-color: black;
+    color: antiquewhite;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
