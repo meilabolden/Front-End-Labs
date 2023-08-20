@@ -42,9 +42,6 @@ export default function App() {
   }
 
 
-
-
-
   return (
     <Container fluid>
       <div>
