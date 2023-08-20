@@ -15,28 +15,50 @@
 
 // ******************************************************************//
 
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import MovieList from './MovieList';
-import Movie from './Movie';
-import Stars from './Stars';
-import Review from './Review';
-import ReviewForm from './ReviewForm';
-import ReviewList from './ReviewList';
-
+import MovieList from './Components/MovieList';
+import Stars from './Components/Stars';
 
 function App() {
+  const rating = 1;
+
   return (
-    <div className="App">
-      <MovieList />
-      <Movie />
-      <Stars />
-      <Review />
-      <ReviewForm />
-      <ReviewList />
-      
-    </div>
+    <section className='container'>
+      <div className='app'>
+        
+        <MovieList />
+      </div>
+    </section>
   );
 }
+
+// export default class App extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       rating: 0
+//     };
+//   }
+
+//   #handleRatingChange = (e) => {
+//     console.log(`Rating changed ...${ e }`)
+//   }
+
+//   render () {
+
+//     const rating = this.state.rating;
+
+//     return (
+//       <section>
+//         <div className="App">
+//           <h1>Review a Movie</h1>
+//             <MovieList />
+           
+//         </div>
+//       </section>
+//     );
+//   };
+// };
 
 export default App;
