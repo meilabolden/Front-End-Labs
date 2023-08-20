@@ -1,6 +1,17 @@
+// Coding Steps:
+// Using the Houses API, or any open API of your choice you can find online, create a single page that 
+//  allows for all 4 CRUD operations to be performed on a resource from the API. 
+// Create a React component (or more, if needed) to represent the resource. 
+// Make all forms and other necessary UI pieces their own components as reasonable.
+
+
 import React from 'react';
 import './App.css';
 import { useState, useEffect } from 'react';
+import { Container } from 'react-bootstrap';
+import Forms from './Components/Forms';
+import TableInfo from './Components/Table';
+import Banner from './Components/Images/choresBanner2.jpg';
 
 
 export default function App() {
@@ -35,9 +46,13 @@ export default function App() {
 
 
   return (
-    <div>
-      <h1>Family Chores App</h1>
-    </div>
+    <Container fluid>
+      <div>
+        <h1>Family Chores App</h1>
+      </div>
+      <img src={ Banner } />
+      <Forms />
+    </Container>
 
   );
 }
