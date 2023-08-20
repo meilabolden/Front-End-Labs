@@ -5,7 +5,7 @@ import Buttons from "./Buttons.js";
 export default function TableInfo() {
     return (
         <Container fluid>
-            {/* <!-- Chores Table --> */}
+            {/* <!-- Chores Table for CRUD data--> */}
             <table id="list" >
                 <thead>
                     <tr>
