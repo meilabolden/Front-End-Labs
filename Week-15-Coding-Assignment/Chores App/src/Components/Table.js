@@ -1,5 +1,6 @@
 import React from "react";
-import { Container, Table } from "react-bootstrap";
+import { Button, Container, Table } from "react-bootstrap";
+import Buttons from "./Buttons.js";
 
 export default function TableInfo() {
     return (
@@ -18,7 +19,9 @@ export default function TableInfo() {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr></tr>
+                    <tr>
+                        <td><Buttons /></td>
+                    </tr>               
                 </tbody>
             </table>
         </Container>

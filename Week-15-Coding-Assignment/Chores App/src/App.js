@@ -5,7 +5,7 @@
 // Make all forms and other necessary UI pieces their own components as reasonable.
 
 
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
@@ -15,9 +15,9 @@ import Banner from './Components/Images/choresBanner2.jpg';
 
 
 export default function App() {
-
-  const API_URL = 'https://649a1bd479fbe9bcf8404a5a.mockapi.io/familyChores';
-
+  
+  const API_URL = 'https://ancient-taiga-31359.herokuapp.com/api/houses';
+  
   const [users, setUsers] = useState([{}]);
 
   const [newUserName, setNewUserName] = useState('');
@@ -50,7 +50,7 @@ export default function App() {
       <div>
         <h1>Family Chores App</h1>
       </div>
-      <img src={ Banner } />
+      <img src={ Banner } className='banner'/>
       <Forms />
     </Container>
 
