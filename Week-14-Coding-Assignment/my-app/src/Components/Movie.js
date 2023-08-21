@@ -5,6 +5,7 @@ import ReviewForm from "./ReviewForm.js";
 import AWalkToRemember from './MediaImages/AWalkToRemember.jpg';
 import Encanto from './MediaImages/Encanto.jpg';
 import { Container } from "react-bootstrap";
+import Review from "./Review.js";
 
 const Movie = ({ movie }) => {
     const {title, image, synopsis, rating } = movie;
@@ -12,12 +13,13 @@ const Movie = ({ movie }) => {
     return (
         <Container>
             <div className="movie">
-            <h2>{title}</h2>
-            <img src={image} alt={title} />
-            <p>{synopsis}</p>
-            <Stars rating={rating} />
-            <ReviewList reviews={movie.reviews} />
-            <ReviewForm movieId={movie.id} />
+                <h2>{title}</h2>
+                <img src={image} alt={title} />
+                <p>{synopsis}</p>
+                <Stars rating={rating} />
+                <ReviewList reviews={movie.reviews} />
+                <ReviewForm movieId={movie.id} />
+                <Review />
             </div>
         </Container>
     );

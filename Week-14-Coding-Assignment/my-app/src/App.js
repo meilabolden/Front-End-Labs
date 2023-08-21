@@ -18,47 +18,51 @@
 import React from 'react';
 import './App.css';
 import MovieList from './Components/MovieList';
+import Movie from './Components/Movie';
 import Stars from './Components/Stars';
+import StarRating from './Components/Stars';
+import Review from './Components/Review';
 
-function App() {
-  const rating = 1;
 
-  return (
-    <section className='container'>
-      <div className='app'>
+
+// function App() {
+//   const rating = 1;
+
+//   return (
+//     <section className='container'>
+//       <div className='app'>
         
-        <MovieList />
-      </div>
-    </section>
-  );
-}
+//         <MovieList />
+//       </div>
+//     </section>
+//   );
+// }
 
-// export default class App extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       rating: 0
-//     };
-//   }
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      rating: 0
+    };
+  }
 
-//   #handleRatingChange = (e) => {
-//     console.log(`Rating changed ...${ e }`)
-//   }
+  // #handleRatingChange = (e) => {
+  //   console.log(`Rating changed ...${ e }`)
+  // }
 
-//   render () {
+  render () {
 
-//     const rating = this.state.rating;
+    // const rating = this.state.rating;
 
-//     return (
-//       <section>
-//         <div className="App">
-//           <h1>Review a Movie</h1>
-//             <MovieList />
-           
-//         </div>
-//       </section>
-//     );
-//   };
-// };
+    return (
+      <section>
+        <div className="App">
+          <h1>Review a Movie</h1>
+            <MovieList />
+        </div>
+      </section>
+    );
+  };
+};
 
-export default App;
+// export default App;

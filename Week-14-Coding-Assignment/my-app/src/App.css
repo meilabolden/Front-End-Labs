@@ -7,8 +7,24 @@
   pointer-events: none;
 }
 
+body {
+  background-color: coral;
+}
+
 img {
   height: 500px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+form {
+  justify-content: center;
+}
+
+.star {
+  cursor: pointer;
 }
 
 @media (prefers-reduced-motion: no-preference) {
